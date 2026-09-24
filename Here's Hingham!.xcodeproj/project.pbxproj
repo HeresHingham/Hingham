@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B1E78762FA6917800F79DCD /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1E78752FA6917800F79DCD /* YouTubePlayerKit */; };
+		9B26F35D2E15BFAE00757947 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B26F35C2E15BFAE00757947 /* FirebaseAuth */; };
+		9B26F35F2E15BFAE00757947 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B26F35E2E15BFAE00757947 /* FirebaseCore */; };
+		9B26F3612E15BFAE00757947 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B26F3602E15BFAE00757947 /* FirebaseFirestore */; };
+		9B26F3642E15C10600757947 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 9B26F3632E15C10600757947 /* GoogleMaps */; };
+		9B5A0F8D2E30098F005D8644 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9B5A0F8C2E30098F005D8644 /* FirebaseCrashlytics */; };
+		9B63F2702DB6C365001E5857 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B63F26F2DB6C365001E5857 /* MapKit.framework */; };
+		9B7D5C612FAE46E300B86146 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 9B7D5C602FAE46E300B86146 /* YouTubeiOSPlayerHelper */; };
+		9BB026B12E31749200C94F0A /* Here-s-Hingham--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BB026B02E31749200C94F0A /* Here-s-Hingham--Info.plist */; };
+		9BE265B92E26CBC000FE80DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9BE265B82E26CBC000FE80DD /* Alamofire */; };
+		9BE265BE2E27089700FE80DD /* CDYelpFusionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9BE265BD2E27089700FE80DD /* CDYelpFusionKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		9B63F2382DB68BC0001E5857 /* Here's Hingham!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Here's Hingham!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B63F26F2DB6C365001E5857 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		9BAB777A305EDE7B00ED9EFB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		9BB026B02E31749200C94F0A /* Here-s-Hingham--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Here-s-Hingham--Info.plist"; sourceTree = "<group>"; };
+		9BB026B22E3179B000C94F0A /* Here-s-Hingham-.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Here-s-Hingham-.geojson"; sourceTree = "<group>"; };
+		9BC500113049E34300143B1A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9B63F23A2DB68BC0001E5857 /* Here's Hingham! */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = "Here's Hingham!";
+			path = "/Users/cconway/Here's Hingham!";
+			sourceTree = "<absolute>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B63F2352DB68BC0001E5857 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B63F2702DB6C365001E5857 /* MapKit.framework in Frameworks */,
+				9BE265B92E26CBC000FE80DD /* Alamofire in Frameworks */,
+				9B1E78762FA6917800F79DCD /* YouTubePlayerKit in Frameworks */,
+				9B26F3612E15BFAE00757947 /* FirebaseFirestore in Frameworks */,
+				9BE265BE2E27089700FE80DD /* CDYelpFusionKit in Frameworks */,
+				9B26F3642E15C10600757947 /* GoogleMaps in Frameworks */,
+				9B5A0F8D2E30098F005D8644 /* FirebaseCrashlytics in Frameworks */,
+				9B26F35F2E15BFAE00757947 /* FirebaseCore in Frameworks */,
+				9B26F35D2E15BFAE00757947 /* FirebaseAuth in Frameworks */,
+				9B7D5C612FAE46E300B86146 /* YouTubeiOSPlayerHelper in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B142CC8305ED66E00151559 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B2A8C523048FA1300B18355 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B5D6970306166BF0076651E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B63F22F2DB68BC0001E5857 = {
+			isa = PBXGroup;
+			children = (
+				9BB026B22E3179B000C94F0A /* Here-s-Hingham-.geojson */,
+				9BB026B02E31749200C94F0A /* Here-s-Hingham--Info.plist */,
+				9B63F23A2DB68BC0001E5857 /* Here's Hingham! */,
+				9B63F26E2DB6C365001E5857 /* Frameworks */,
+				9B63F2392DB68BC0001E5857 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B63F2392DB68BC0001E5857 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B63F2382DB68BC0001E5857 /* Here's Hingham!.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B63F26E2DB6C365001E5857 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B63F26F2DB6C365001E5857 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B8CF44F3047116700BAA434 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BAB777F305EDE7B00ED9EFB /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BC500163049E34300143B1A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BE66EB03052F069005C5C27 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B63F2372DB68BC0001E5857 /* Here's Hingham! */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B63F25B2DB68BC2001E5857 /* Build configuration list for PBXNativeTarget "Here's Hingham!" */;
+			buildPhases = (
+				9B63F2342DB68BC0001E5857 /* Sources */,
+				9B63F2352DB68BC0001E5857 /* Frameworks */,
+				9B63F2362DB68BC0001E5857 /* Resources */,
+				9B5A0F942E302456005D8644 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9B63F23A2DB68BC0001E5857 /* Here's Hingham! */,
+			);
+			name = "Here's Hingham!";
+			packageProductDependencies = (
+				9B26F35C2E15BFAE00757947 /* FirebaseAuth */,
+				9B26F35E2E15BFAE00757947 /* FirebaseCore */,
+				9B26F3602E15BFAE00757947 /* FirebaseFirestore */,
+				9B26F3632E15C10600757947 /* GoogleMaps */,
+				9BE265B82E26CBC000FE80DD /* Alamofire */,
+				9BE265BD2E27089700FE80DD /* CDYelpFusionKit */,
+				9B5A0F8C2E30098F005D8644 /* FirebaseCrashlytics */,
+				9B1E78752FA6917800F79DCD /* YouTubePlayerKit */,
+				9B7D5C602FAE46E300B86146 /* YouTubeiOSPlayerHelper */,
+			);
+			productName = "Here's Hingham!";
+			productReference = 9B63F2382DB68BC0001E5857 /* Here's Hingham!.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B63F2302DB68BC0001E5857 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					9B63F2372DB68BC0001E5857 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = 9B63F2332DB68BC0001E5857 /* Build configuration list for PBXProject "Here's Hingham!" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B63F22F2DB68BC0001E5857;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9B26F35B2E15BFAE00757947 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9B26F3622E15C10600757947 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				9BE265B72E26CBC000FE80DD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9BE265BC2E27089700FE80DD /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */,
+				9B1E78742FA6917800F79DCD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				9B7D5C5F2FAE46E300B86146 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9B63F2392DB68BC0001E5857 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
+					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B8CF44F3047116700BAA434 /* Products */;
+					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9BE66EB03052F069005C5C27 /* Products */;
+					ProjectRef = 9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9BAB777F305EDE7B00ED9EFB /* Products */;
+					ProjectRef = 9BAB777A305EDE7B00ED9EFB /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B2A8C523048FA1300B18355 /* Products */;
+					ProjectRef = 9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9BC500163049E34300143B1A /* Products */;
+					ProjectRef = 9BC500113049E34300143B1A /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B5D6970306166BF0076651E /* Products */;
+					ProjectRef = 9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9B63F2372DB68BC0001E5857 /* Here's Hingham! */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B63F2362DB68BC0001E5857 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BB026B12E31749200C94F0A /* Here-s-Hingham--Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B5A0F942E302456005D8644 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}.debug.dylib",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B63F2342DB68BC0001E5857 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9B63F2592DB68BC2001E5857 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6Y57QV4NW5;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9B63F25A2DB68BC2001E5857 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6Y57QV4NW5;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B63F25C2DB68BC2001E5857 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 125;
+				DEVELOPMENT_TEAM = 6Y57QV4NW5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Here-s-Hingham--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hingham!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.58;
+				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B63F25D2DB68BC2001E5857 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 125;
+				DEVELOPMENT_TEAM = 6Y57QV4NW5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Here-s-Hingham--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hingham!";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.58;
+				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B63F2332DB68BC0001E5857 /* Build configuration list for PBXProject "Here's Hingham!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B63F2592DB68BC2001E5857 /* Debug */,
+				9B63F25A2DB68BC2001E5857 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B63F25B2DB68BC2001E5857 /* Build configuration list for PBXNativeTarget "Here's Hingham!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B63F25C2DB68BC2001E5857 /* Debug */,
+				9B63F25D2DB68BC2001E5857 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B1E78742FA6917800F79DCD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+		9B26F35B2E15BFAE00757947 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.15.0;
+			};
+		};
+		9B26F3622E15C10600757947 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		9B7D5C5F2FAE46E300B86146 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+		9BE265B72E26CBC000FE80DD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		9BE265BC2E27089700FE80DD /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chrisdhaan/CDYelpFusionKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B1E78752FA6917800F79DCD /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B1E78742FA6917800F79DCD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+		9B26F35C2E15BFAE00757947 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B26F35B2E15BFAE00757947 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		9B26F35E2E15BFAE00757947 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B26F35B2E15BFAE00757947 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		9B26F3602E15BFAE00757947 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B26F35B2E15BFAE00757947 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		9B26F3632E15C10600757947 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B26F3622E15C10600757947 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		9B5A0F8C2E30098F005D8644 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B26F35B2E15BFAE00757947 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		9B7D5C602FAE46E300B86146 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B7D5C5F2FAE46E300B86146 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
+		9BE265B82E26CBC000FE80DD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BE265B72E26CBC000FE80DD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		9BE265BD2E27089700FE80DD /* CDYelpFusionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BE265BC2E27089700FE80DD /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */;
+			productName = CDYelpFusionKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9B63F2302DB68BC0001E5857 /* Project object */;
+}
