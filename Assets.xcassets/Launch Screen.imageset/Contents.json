@@ -1,0 +1,224 @@
+{
+  "images" : [
+    {
+      "filename" : "iPadLaunchLight 6.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 6.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iPadLaunchLight 7.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 7.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iPadLaunchLight 8.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 8.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "iPadLaunchLight 9.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 9.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iPadLaunchLight 10.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 10.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iPadLaunchLight 11.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 11.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "iPadLaunchLight 1.jpg",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "width-class" : "regular"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark.jpg",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "iPadLaunchLight.jpg",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "width-class" : "regular"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "iPadLaunchLight 4.jpg",
+      "idiom" : "universal",
+      "scale" : "3x",
+      "width-class" : "regular"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 3.jpg",
+      "idiom" : "universal",
+      "scale" : "3x",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "iPadLaunchLight 2.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "width-class" : "regular"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 4.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "iPadLaunchLight 3.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "width-class" : "regular"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 2.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "2x",
+      "width-class" : "regular"
+    },
+    {
+      "filename" : "iPadLaunchLight 5.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "3x",
+      "width-class" : "regular"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iPadLaunchDark 5.jpg",
+      "height-class" : "regular",
+      "idiom" : "universal",
+      "scale" : "3x",
+      "width-class" : "regular"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

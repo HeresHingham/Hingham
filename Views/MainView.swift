@@ -31,7 +31,6 @@ struct MainView: View {
   @State private var isShowingLookAroundViewer: Bool = false
   @State private var isLookAroundUnavailable: Bool = false
   @State private var isInitialView: Bool = true
-  @State private var cameraIsChanging: Bool = false
   @State private var tabSelection: Int = 0
   @State private var currentPage: Int = 0
   @State private var skipAreaCard: Bool = false
@@ -41,12 +40,26 @@ struct MainView: View {
   @State private var homeAreaId: Int = -1
   @State private var homeArea: SchemaV1.Area = SchemaV1.Area()
   @State private var toasts: [Toast] = []
-  @State private var mapStyle: MapStyle = MapStyle.standard(pointsOfInterest: .including([]))
+  @State private var mapStyle: MapStyle = MapStyle.standard(elevation: .realistic)
   @State private var interactionModes: MapInteractionModes = [.all]
   @State private var imagery3DMode = false
+  @State private var trailCoordinateArrays = [[CLLocationCoordinate2D]]()
+  @State private var trailStrokeStyleNarrow = StrokeStyle(
+    lineWidth: 1.5,
+      lineCap: .round,
+      lineJoin: .round,
+      dash: [2, 3]
+  )
+  @State private var trailStrokeStyleWide = StrokeStyle(
+    lineWidth: 3,
+    lineCap: .round,
+    lineJoin: .round
+  )
+  
   @ObservedObject var location: LocationManager = LocationManager()
   
   let maxWidth: CGFloat = 475
+  
   let hinghamCoordinates: [CLLocationCoordinate2D] = [
     CLLocationCoordinate2D(latitude: 42.22471, longitude: -70.91455),
     CLLocationCoordinate2D(latitude: 42.15761, longitude: -70.92492),
@@ -109,7 +122,7 @@ struct MainView: View {
           
           if areasViewModel.showCardView == true {
             CardView(showPlaceDetail: $showPlaceCard, mapStyle: $mapStyle, imagery3DMode: $imagery3DMode, area: areasViewModel.selectedArea)
-              .frame(minWidth: UIDevice.current.userInterfaceIdiom == .pad ? 550 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.previewHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.previewHeightMultiple)
+              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 550 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.previewHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.previewHeightMultiple)
               .shadow(color: .black.opacity(0.3), radius: 20)
               .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
               .padding(.bottom, UIDevice.current.userInterfaceIdiom == .pad ? 20 : -10)
@@ -338,7 +351,7 @@ extension MainView {
               let previewWasVisible = areasViewModel.showCardView
               areasViewModel.scrollItemId = 0
 
-              if ((area.areaId == areasViewModel.selectedArea.areaId && previewWasVisible == true) || (skipAreaCard == true && area.areaId != 11 && area.areaId != 12 && area.name != "More-Brewer Park")) {
+              if ((area.areaId == areasViewModel.selectedArea.areaId && previewWasVisible == true) || (skipAreaCard == true && area.areaId != 11 && area.areaId != 12)) {  // && area.name != "More-Brewer Park"
                 withAnimation(.easeInOut) {
                   if skipAreaCard == true {
                     areasViewModel.selectedArea = area
@@ -489,21 +502,35 @@ extension MainView {
               }
             }
           }
-          
+
+//          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.23061, longitude: -70.90933), anchor: .topLeading) {
+//              Image("MoreBrewerTrails")
+//                  .resizable()
+//                  .scaledToFit()
+//          }
+
+          ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
+            MapPolyline(coordinates: areasViewModel.trailCoordinateArrays[index])
+              .stroke(.black, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : trailStrokeStyleNarrow)
+              .mapOverlayLevel(level: .aboveLabels)
+          }
+
           UserAnnotation()
+
         }
         .ignoresSafeArea()
+        .onTapGesture { position in
+            if let coordinate = proxy.convert(position, from: .local) {
+              print("{\"lat\": \(coordinate.latitude - 0.00082), \"lng\": \(coordinate.longitude), \"type\": \"\"},")
+            }
+        }
         .onChange(of: imagery3DMode) { oldValue, newValue in
           mapStyle = newValue == true ? areasViewModel.satelliteMapStyle : areasViewModel.standardMapStyle
-        }
-        .onMapCameraChange(frequency: .onEnd) { context in
-          cameraIsChanging = false
         }
         .onMapCameraChange(frequency: .continuous) { context in
           @AppStorage("IconAltitudeMaximum") var iconAltitude = 6000
           areasViewModel.iconAltitudeMaximum = areasViewModel.iconAltitudeMaximum != 50000 ? iconAltitude : areasViewModel.iconAltitudeMaximum
           let distanceDelta = areasViewModel.distance - context.camera.distance
-          cameraIsChanging = true
           
           if areasViewModel.distance == 0.0 {
             areasViewModel.distance = context.camera.distance
@@ -517,9 +544,6 @@ extension MainView {
               areasViewModel.iconResizePercent = areasViewModel.distance / context.camera.distance
             }
             
-//            if areasViewModel.placeFilter != .None {
-//              areasViewModel.iconResizePercent *= 0.075
-//            }
             areasViewModel.selectedArea.areaId = saveAreaId
           }
           
@@ -623,7 +647,7 @@ extension MainView {
       }
       
       Toggle(isOn: $imagery3DMode) {
-        Label("3D Satellite", systemImage: "square.3.layers.3d")
+        Label("Satellite", systemImage: "eraser.slash")
       }
       .disabled(areasViewModel.visible == true)
       
@@ -843,6 +867,8 @@ struct YouTubeView: UIViewRepresentable {
     // Update the player if the video ID changes
   }
 }
+
+
 
 enum PlaceFilter: Int {
   case None = 0

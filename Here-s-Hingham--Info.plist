@@ -22,7 +22,7 @@
 		<string>MKDirectionsModeCar</string>
 		<string>MKDirectionsModeFerry</string>
 		<string>MKDirectionsModePedestrian</string>
-	</array>	
+	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

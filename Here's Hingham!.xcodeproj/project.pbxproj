@@ -21,6 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -38,7 +46,7 @@
 		9B63F23A2DB68BC0001E5857 /* Here's Hingham! */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			name = "Here's Hingham!";
-			path = "/Users/cconway/Here's Hingham!";
+			path = "/Users/cameron/Here's Hingham!";
 			sourceTree = "<absolute>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -64,6 +72,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E27166F306977B8005AD373 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E30AFF73068488600C38046 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E4F59863069897E00DAA80D /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E6CF4213065AE750067599E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */,
+				9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */,
+				9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */,
+				9BAB777A305EDE7B00ED9EFB /* Here's Hingham!.xcodeproj */,
+				9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */,
+				9BC500113049E34300143B1A /* Here's Hingham!.xcodeproj */,
+				9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */,
+				7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */,
+				7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */,
+				7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */,
+				7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */,
+				7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */,
+				7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */,
+				7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		7E6CF4413065AE750067599E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E76048030696F32001221FB /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EB7D647306701010043E42A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EC6AC7830697C1200D1F15C /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED976C53066BEED001928A1 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9B142CC8305ED66E00151559 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -87,6 +156,7 @@
 				9B63F23A2DB68BC0001E5857 /* Here's Hingham! */,
 				9B63F26E2DB6C365001E5857 /* Frameworks */,
 				9B63F2392DB68BC0001E5857 /* Products */,
+				7E6CF4213065AE750067599E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,16 +268,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
-					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E6CF4413065AE750067599E /* Products */;
+					ProjectRef = 7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 9B8CF44F3047116700BAA434 /* Products */;
-					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7EC6AC7830697C1200D1F15C /* Products */;
+					ProjectRef = 7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 9BE66EB03052F069005C5C27 /* Products */;
-					ProjectRef = 9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E76048030696F32001221FB /* Products */;
+					ProjectRef = 7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 9BAB777F305EDE7B00ED9EFB /* Products */;
@@ -216,6 +286,38 @@
 				{
 					ProductGroup = 9B2A8C523048FA1300B18355 /* Products */;
 					ProjectRef = 9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E27166F306977B8005AD373 /* Products */;
+					ProjectRef = 7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EB7D647306701010043E42A /* Products */;
+					ProjectRef = 7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E4F59863069897E00DAA80D /* Products */;
+					ProjectRef = 7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
+					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7ED976C53066BEED001928A1 /* Products */;
+					ProjectRef = 7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E30AFF73068488600C38046 /* Products */;
+					ProjectRef = 7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B8CF44F3047116700BAA434 /* Products */;
+					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9BE66EB03052F069005C5C27 /* Products */;
+					ProjectRef = 9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 9BC500163049E34300143B1A /* Products */;
@@ -407,9 +509,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 125;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
+				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Here-s-Hingham--Info.plist";
@@ -419,7 +523,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
@@ -445,9 +548,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 125;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
+				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Here-s-Hingham--Info.plist";
@@ -457,7 +562,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;

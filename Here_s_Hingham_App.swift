@@ -156,6 +156,43 @@ struct Here_s_Hingham_App: App {
             }
           }
         }
+        
+        let trailQuery = db.collection("HinghamTrail")
+        
+        trailQuery.getDocuments { queryTrail, err in
+          for document in queryTrail!.documents {
+            let trail = SchemaV1.Trail()
+            trail.documentID = document.documentID
+            trail.placeDocId = document.get("placeDocId") as! String
+            trail.trailCoordinates = document.get("trailCoordinates") as! String
+            areasViewModel.addTrail(trail)
+          }
+          
+          let parkPlaces: [SchemaV1.Place] = placesViewModel.places.filter({ $0.type == 8 })
+          areasViewModel.trailCoordinateArrays = [[CLLocationCoordinate2D]]()
+
+          parkPlaces.forEach { place in
+            let trails: [SchemaV1.Trail] = areasViewModel.trails.filter({ $0.placeDocId == place.documentID })
+            
+            trails.forEach { trail in
+              if let jsonData = trail.trailCoordinates.data(using: .utf8) {
+                do {
+                  let trailArray = try JSONDecoder().decode([SchemaV1.TrailCoordinate].self, from: jsonData)
+                  var trailCoordinateArray = [CLLocationCoordinate2D]()
+                  var trailCoordinateType = ""
+                  trailArray.forEach { trailCoordinate in
+                    trailCoordinateArray.append(CLLocationCoordinate2D(latitude: trailCoordinate.lat, longitude: trailCoordinate.lng))
+                    trailCoordinateType = trailCoordinate.type
+                  }
+                  areasViewModel.trailCoordinateArrays.append(trailCoordinateArray)
+                  areasViewModel.trailTypes.append(trailCoordinateType)
+                } catch {
+                  print("Error decoding JSON: \(error)")
+                }
+              }
+            }
+          }
+        }
       }
     }
 

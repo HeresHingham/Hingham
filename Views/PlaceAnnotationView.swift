@@ -79,11 +79,10 @@ struct PlaceAnnotationView: View {
       VStack(spacing: 0) {
         if type >= 20 {
           Text(name)
-            .foregroundColor(Color(white: 1.0))
+            .foregroundColor(foregroundColor)
             .font(Font.caption)
             .fontWeight(fontWeight)
             .background(Color.clear)
-            .customStroke(color: .black, width: 0.2)
             .opacity(opacity)
             .blur(radius: 0.0)
         } else {

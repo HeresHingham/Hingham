@@ -23,6 +23,9 @@ class AreasViewModel: ObservableObject {
   @Published var areas: [SchemaV1.Area] = []
   @Published var tours: [SchemaV1.Tour] = []
   @Published var videos: [SchemaV1.Video] = []
+  @Published var trails: [SchemaV1.Trail] = []
+  @Published var trailCoordinateArrays: [[CLLocationCoordinate2D]] = []
+  @Published var trailTypes: [String] = []
   @Published var previewArea = SchemaV1.Area()
   @Published var selectedArea: SchemaV1.Area = SchemaV1.Area() {
     didSet {
@@ -49,7 +52,8 @@ class AreasViewModel: ObservableObject {
   @Published var showAddToBucketList = false
   @Published var iconResizePercent: Double = 0.0
   @Published var satelliteMapStyle = MapStyle.imagery(elevation: .realistic)
-  @Published var standardMapStyle = MapStyle.standard(pointsOfInterest: .including([]))
+  @Published var standardMapStyle = MapStyle.standard(elevation: .realistic)
+//  @Published var standardMapStyle = MapStyle.standard(pointsOfInterest: .including([]))
   @Published var previewHeightMultiple = 0.75
   @Published var ytPlayerView = YTPlayerView()
   @Published var statusObserver: NSKeyValueObservation?
@@ -100,6 +104,10 @@ class AreasViewModel: ObservableObject {
   
   public func addVideo(_ video: SchemaV1.Video) {
     videos.append(video)
+  }
+    
+  public func addTrail(_ trail: SchemaV1.Trail) {
+    trails.append(trail)
   }
   
   public func updateRegion(_ mapCameraPosition: MapCameraPosition) {
@@ -160,8 +168,8 @@ class AreasViewModel: ObservableObject {
           return imageUrl
         } else if UIImage(named: "Glad Tidings Plain" + placeImage) != nil {
           return "Glad Tidings Plain" + placeImage
-        } else if UIImage(named: "West Hingham" + placeImage) != nil {
-          return "West Hingham" + placeImage
+        } else if UIImage(named: "West" + placeImage) != nil {
+          return "West" + placeImage
         } else if UIImage(named: "Liberty Plain" + placeImage) != nil {
           return "Liberty Plain" + placeImage
         } else if UIImage(named: "Square" + placeImage) != nil {

@@ -1,0 +1,56 @@
+[
+{
+  "address": "66 Thistle Patch Way",
+  "archStyle": "",
+  "areaId": 4,
+  "areaName": "East",
+  "desc": "",
+  "estimatedValue": "",
+  "googleId": "ChIJzanvlphh44kRGvRCfxVHIlk",
+  "googleRating": 1.0,
+  "googleReviews": 2,
+  "googleUrl": "https://maps.app.goo.gl/vscyfsh2vJt71ueu8",
+  "hinghamRatings": "",
+  "hinghamReviews": 0,
+  "hours": "",
+  "iconSize": 17,
+  "imageCount": 1,
+  "instagram": "",
+  "likes": 0,
+  "locationLat": 42.22180,   
+  "locationLng": -70.87215,
+  "lotSize": 0.0,
+  "menuUrl": "",
+  "name": "Schultz Field Conservation Area",
+  "nickname": "Schultz Field",
+  "notes": "",
+  "phone": "",
+  "shortName": "Schultz Field",
+  "specialNotes": "",
+  "specials": "",
+  "squareFeet": 0,
+  "type": 8,
+  "videoUrl": "",
+  "website": "https://hinghamlandtrust.org/triphammer-pond-schultz-field/",
+  "yearBuilt": 0,
+  "yelpCategory": "Park",
+  "yelpId": "",
+  "yelpPrice": "",
+  "yelpRating": 0.0,
+  "yelpReviews": 0,
+  "yelpUrl": ""
+},
+
+{
+    "tourId": 4,
+    "placeDocId": "fWGLWjKUVElOyDzPwXQw",
+    "name": "",
+    "notes": ""
+},
+
+{
+  "desc": "Strange and unusual places and events in Hingham.",
+  "name": "Weird Hingham",
+  "tourId": 4
+}
+]

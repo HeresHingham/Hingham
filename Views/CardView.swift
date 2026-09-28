@@ -28,7 +28,7 @@ struct CardView: View {
   var body: some View {
     VStack {
       HStack(alignment: .top) {
-        if ((area.shortName == "World's End" || area.shortName == "More-Brewer") && areasViewModel.visible == true) || placesViewModel.selectedPlace.name == "Iron Horse Statue" || placesViewModel.selectedPlace.name == "No Noise Hingham" {
+        if ((area.shortName == "World's End" || area.shortName == "More-Brewer" || area.shortName == "Turkey Hill") && areasViewModel.visible == true) || placesViewModel.selectedPlace.name == "Iron Horse Statue" || placesViewModel.selectedPlace.name == "No Noise Hingham" {
         } else {
           VStack(alignment: .leading) {
             imageSection
@@ -125,7 +125,7 @@ extension CardView {
                     .resizable()
                     .scaledToFill()
                     .tag(index)
-                }
+                }     
               }
             }
           }

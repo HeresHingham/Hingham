@@ -400,6 +400,70 @@ enum SchemaV1: VersionedSchema {
       try container.encode(name, forKey: .name)
     }
   }
+    
+  @Model
+  final class Trail: Identifiable, Codable, Equatable {
+    enum CodingKeys: CodingKey {
+      case documentID
+      case placeDocId
+      case trailCoordinates
+    }
+    var documentID = ""
+    var placeDocId = ""
+    var trailCoordinates = ""
+    var timestamp: Date
+    
+    init() {
+      self.timestamp = Date.now
+    }
+      
+    required init(from decoder: Decoder) throws {
+      let container = try decoder.container(keyedBy: CodingKeys.self)
+      self.documentID = try container.decode(String.self, forKey: .documentID)
+      self.placeDocId = try container.decode(String.self, forKey: .placeDocId)
+      self.trailCoordinates = try container.decode(String.self, forKey: .trailCoordinates)
+      self.timestamp = Date.now
+    }
+    
+    func encode(to encoder: Encoder) throws {
+      var container = encoder.container(keyedBy: CodingKeys.self)
+      try container.encode(documentID, forKey: .documentID)
+    }
+  }
+  
+  @Model
+  final class TrailCoordinate: Codable, Equatable {
+    enum CodingKeys: CodingKey {
+      case lat
+      case lng
+      case type
+    }
+    
+    var lat = 0.0
+    var lng = 0.0
+    var type = ""
+    var timestamp: Date
+    
+    required init(from decoder: Decoder) throws {
+      let container = try decoder.container(keyedBy: CodingKeys.self)
+      self.lat = try container.decode(Double.self, forKey: .lat)
+      self.lng = try container.decode(Double.self, forKey: .lng)
+      self.type = try container.decode(String.self, forKey: .type)
+      self.timestamp = Date.now
+    }
+    
+    init(lat: Double, lng: Double, type: String) {
+      self.lat = lat
+      self.lng = lng
+      self.type = type
+      self.timestamp = Date.now
+    }
+    
+    func encode(to encoder: Encoder) throws {
+      var container = encoder.container(keyedBy: CodingKeys.self)
+      try container.encode(lat, forKey: .lat)
+    }
+  }
 }
 
 func imageNameIfSpecialIsToday(special: String, showSpecial: Bool) -> String { 
