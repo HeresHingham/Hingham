@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "iPadLaunchLight 6.jpg",
+      "filename" : "LaunchScreen 1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,7 +17,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "iPadLaunchLight 7.jpg",
+      "filename" : "LaunchScreen 2.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -33,7 +33,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "iPadLaunchLight 8.jpg",
+      "filename" : "LaunchScreen 3.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -49,7 +49,7 @@
       "scale" : "3x"
     },
     {
-      "filename" : "iPadLaunchLight 9.jpg",
+      "filename" : "LaunchScreen.jpg",
       "height-class" : "regular",
       "idiom" : "universal",
       "scale" : "1x"
@@ -67,7 +67,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "iPadLaunchLight 10.jpg",
+      "filename" : "LaunchScreen 4.jpg",
       "height-class" : "regular",
       "idiom" : "universal",
       "scale" : "2x"
@@ -85,7 +85,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "iPadLaunchLight 11.jpg",
+      "filename" : "LaunchScreen 5.jpg",
       "height-class" : "regular",
       "idiom" : "universal",
       "scale" : "3x"

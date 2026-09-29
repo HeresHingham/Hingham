@@ -122,7 +122,7 @@ struct MainView: View {
           
           if areasViewModel.showCardView == true {
             CardView(showPlaceDetail: $showPlaceCard, mapStyle: $mapStyle, imagery3DMode: $imagery3DMode, area: areasViewModel.selectedArea)
-              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 550 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.previewHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.previewHeightMultiple)
+              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 550 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple)
               .shadow(color: .black.opacity(0.3), radius: 20)
               .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
               .padding(.bottom, UIDevice.current.userInterfaceIdiom == .pad ? 20 : -10)
@@ -237,7 +237,7 @@ struct MainView: View {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
     .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-      areasViewModel.previewHeightMultiple = UIDevice.current.userInterfaceIdiom == .pad ? UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown ? 0.6 : 0.9 : 0.75
+      areasViewModel.cardHeightMultiple = UIDevice.current.userInterfaceIdiom == .pad ? UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown ? 0.6 : 0.9 : 0.75
     }
   }
   
@@ -351,7 +351,7 @@ extension MainView {
               let previewWasVisible = areasViewModel.showCardView
               areasViewModel.scrollItemId = 0
 
-              if ((area.areaId == areasViewModel.selectedArea.areaId && previewWasVisible == true) || (skipAreaCard == true && area.areaId != 11 && area.areaId != 12)) {  // && area.name != "More-Brewer Park"
+              if ((area.areaId == areasViewModel.selectedArea.areaId && previewWasVisible == true) || (skipAreaCard == true && area.areaId != 11 && area.areaId != 12 && area.name != "More-Brewer Park")) {
                 withAnimation(.easeInOut) {
                   if skipAreaCard == true {
                     areasViewModel.selectedArea = area
@@ -503,15 +503,17 @@ extension MainView {
             }
           }
 
-//          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.23061, longitude: -70.90933), anchor: .topLeading) {
-//              Image("MoreBrewerTrails")
-//                  .resizable()
-//                  .scaledToFit()
-//          }
+          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.222531012186536, longitude:  -70.91012952387112), anchor: .topLeading) {
+              Image("BrewerReservationTrails")
+                  .resizable()
+                  .scaledToFit()
+          }
 
+//  index == 0 ? .red : index == 1 ? .green : index == 3 ? .blue : index == 4 ? .orange : index == 5 ? .yellow : index == 6 ? .white :
+          
           ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
             MapPolyline(coordinates: areasViewModel.trailCoordinateArrays[index])
-              .stroke(.black, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : trailStrokeStyleNarrow)
+              .stroke(.red, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : trailStrokeStyleNarrow)
               .mapOverlayLevel(level: .aboveLabels)
           }
 
@@ -757,12 +759,13 @@ extension MainView {
           .stroke(Color.accent, lineWidth: 6)
           .padding(.top, 40)
           .padding(.bottom, -110)
-          .frame(width: UIScreen.main.bounds.size.width * (areasViewModel.firstScrollItemType(place: placesViewModel.selectedPlace) == "firstBucket•Video" ? UIDevice.current.userInterfaceIdiom == .phone ? 0.92 : 0.3 : 0.9), height: UIScreen.main.bounds.size.height * (areasViewModel.firstScrollItemType(place: placesViewModel.selectedPlace) == "firstBucket•Video" ? 0.248 : 0.248))
+          .frame(width: UIScreen.main.bounds.size.width * (UIDevice.current.userInterfaceIdiom == .phone ? 0.92 : 0.3), height: UIScreen.main.bounds.size.height * (areasViewModel.firstScrollItemType(place: placesViewModel.selectedPlace) == "firstBucket•Video" ? 0.248 : 0.248))
     )
     .overlay(alignment: .topTrailing) {
       Button {
         withAnimation(.easeInOut) {
           areasViewModel.showCardView = false
+          areasViewModel.ytPlayerView.stopVideo()
           if areasViewModel.visible == true {
             areasViewModel.selectedArea = areasViewModel.areas[0]
           }
@@ -771,6 +774,7 @@ extension MainView {
       label: {
          Image(systemName: "xmark.circle.fill")
           .font(.system(size: 24))
+          .padding(.trailing, UIScreen.main.bounds.size.width * (UIDevice.current.userInterfaceIdiom == .phone ? 0.92 : 0.3))
       }
       .foregroundColor(.white)
       .padding()
