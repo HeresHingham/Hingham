@@ -21,11 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E1C24D8306BF2A70011426A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E1C2510306C47B30011426A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E91ED31306C63E8006B4B82 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EA148C5306C551100D0F08D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EAC8634306D4E9B00E0375A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -46,7 +51,7 @@
 		9B63F23A2DB68BC0001E5857 /* Here's Hingham! */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			name = "Here's Hingham!";
-			path = "/Users/cameron/Here's Hingham!";
+			path = /Users/cameron/Hingham;
 			sourceTree = "<absolute>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,6 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E1C24E5306BF2A70011426A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E1C2511306C47B30011426A /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E27166F306977B8005AD373 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -104,6 +119,10 @@
 				7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */,
 				7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */,
 				7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */,
+				7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */,
+				7E1C24D8306BF2A70011426A /* Here's Hingham!.xcodeproj */,
+				7EA148C5306C551100D0F08D /* Here's Hingham!.xcodeproj */,
+				7E91ED31306C63E8006B4B82 /* Here's Hingham!.xcodeproj */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -114,6 +133,21 @@
 			sourceTree = "<group>";
 		};
 		7E76048030696F32001221FB /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E91ED3E306C63E8006B4B82 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EA148D2306C551100D0F08D /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EAC8641306D4E9B00E0375A /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +191,7 @@
 				9B63F26E2DB6C365001E5857 /* Frameworks */,
 				9B63F2392DB68BC0001E5857 /* Products */,
 				7E6CF4213065AE750067599E /* Recovered References */,
+				7E1C2510306C47B30011426A /* Here's Hingham!.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,16 +303,40 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7E6CF4413065AE750067599E /* Products */;
-					ProjectRef = 7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */;
-				},
-				{
 					ProductGroup = 7EC6AC7830697C1200D1F15C /* Products */;
 					ProjectRef = 7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7E76048030696F32001221FB /* Products */;
 					ProjectRef = 7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
+					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E30AFF73068488600C38046 /* Products */;
+					ProjectRef = 7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B8CF44F3047116700BAA434 /* Products */;
+					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EA148D2306C551100D0F08D /* Products */;
+					ProjectRef = 7EA148C5306C551100D0F08D /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B5D6970306166BF0076651E /* Products */;
+					ProjectRef = 9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E6CF4413065AE750067599E /* Products */;
+					ProjectRef = 7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E1C2511306C47B30011426A /* Products */;
+					ProjectRef = 7E1C2510306C47B30011426A /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 9BAB777F305EDE7B00ED9EFB /* Products */;
@@ -292,6 +351,10 @@
 					ProjectRef = 7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7EAC8641306D4E9B00E0375A /* Products */;
+					ProjectRef = 7EAC8634306D4E9B00E0375A /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EB7D647306701010043E42A /* Products */;
 					ProjectRef = 7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */;
 				},
@@ -300,32 +363,24 @@
 					ProjectRef = 7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
-					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
-				},
-				{
 					ProductGroup = 7ED976C53066BEED001928A1 /* Products */;
 					ProjectRef = 7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */;
-				},
-				{
-					ProductGroup = 7E30AFF73068488600C38046 /* Products */;
-					ProjectRef = 7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */;
-				},
-				{
-					ProductGroup = 9B8CF44F3047116700BAA434 /* Products */;
-					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 9BE66EB03052F069005C5C27 /* Products */;
 					ProjectRef = 9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 9BC500163049E34300143B1A /* Products */;
-					ProjectRef = 9BC500113049E34300143B1A /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E1C24E5306BF2A70011426A /* Products */;
+					ProjectRef = 7E1C24D8306BF2A70011426A /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 9B5D6970306166BF0076651E /* Products */;
-					ProjectRef = 9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E91ED3E306C63E8006B4B82 /* Products */;
+					ProjectRef = 7E91ED31306C63E8006B4B82 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9BC500163049E34300143B1A /* Products */;
+					ProjectRef = 9BC500113049E34300143B1A /* Here's Hingham!.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -511,7 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 125;
+				CURRENT_PROJECT_VERSION = 128;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -530,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.58;
+				MARKETING_VERSION = 1.59;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -550,7 +605,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 125;
+				CURRENT_PROJECT_VERSION = 128;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -569,7 +624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.58;
+				MARKETING_VERSION = 1.59;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -40,18 +40,18 @@ struct MainView: View {
   @State private var homeAreaId: Int = -1
   @State private var homeArea: SchemaV1.Area = SchemaV1.Area()
   @State private var toasts: [Toast] = []
-  @State private var mapStyle: MapStyle = MapStyle.standard(elevation: .realistic)
+  @State private var mapStyle: MapStyle = MapStyle.standard(pointsOfInterest: .including([]))
   @State private var interactionModes: MapInteractionModes = [.all]
   @State private var imagery3DMode = false
   @State private var trailCoordinateArrays = [[CLLocationCoordinate2D]]()
   @State private var trailStrokeStyleNarrow = StrokeStyle(
-    lineWidth: 1.5,
+    lineWidth: 0.5,
       lineCap: .round,
       lineJoin: .round,
       dash: [2, 3]
   )
   @State private var trailStrokeStyleWide = StrokeStyle(
-    lineWidth: 3,
+    lineWidth: 1.5,
     lineCap: .round,
     lineJoin: .round
   )
@@ -122,7 +122,7 @@ struct MainView: View {
           
           if areasViewModel.showCardView == true {
             CardView(showPlaceDetail: $showPlaceCard, mapStyle: $mapStyle, imagery3DMode: $imagery3DMode, area: areasViewModel.selectedArea)
-              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 550 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple)
+              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 365 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple)
               .shadow(color: .black.opacity(0.3), radius: 20)
               .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
               .padding(.bottom, UIDevice.current.userInterfaceIdiom == .pad ? 20 : -10)
@@ -237,7 +237,7 @@ struct MainView: View {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
     .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-      areasViewModel.cardHeightMultiple = UIDevice.current.userInterfaceIdiom == .pad ? UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown ? 0.6 : 0.9 : 0.75
+      areasViewModel.cardHeightMultiple = UIDevice.current.userInterfaceIdiom == .pad ? UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown ? 0.6 : 1.0 : 0.75
     }
   }
   
@@ -502,18 +502,17 @@ extension MainView {
               }
             }
           }
+//          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.23459, longitude:  -70.86681), anchor: .topLeading) {
+//              Image("TriphammerPondTrails")
+//                  .resizable()
+//                  .scaledToFit()
+//          }
 
-          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.222531012186536, longitude:  -70.91012952387112), anchor: .topLeading) {
-              Image("BrewerReservationTrails")
-                  .resizable()
-                  .scaledToFit()
-          }
-
-//  index == 0 ? .red : index == 1 ? .green : index == 3 ? .blue : index == 4 ? .orange : index == 5 ? .yellow : index == 6 ? .white :
+//          index == 18 ? .brown : index == 16 ? .gray : index == 17 ? .red : index == 30 ? .green : index == 13 ? .blue : index == 26 ? .orange : index == 14 ? .yellow : index == 15 ? .white :
           
           ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
             MapPolyline(coordinates: areasViewModel.trailCoordinateArrays[index])
-              .stroke(.red, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : trailStrokeStyleNarrow)
+              .stroke(colorScheme == .dark ? .white : .black, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : trailStrokeStyleNarrow)
               .mapOverlayLevel(level: .aboveLabels)
           }
 
@@ -523,7 +522,7 @@ extension MainView {
         .ignoresSafeArea()
         .onTapGesture { position in
             if let coordinate = proxy.convert(position, from: .local) {
-              print("{\"lat\": \(coordinate.latitude - 0.00082), \"lng\": \(coordinate.longitude), \"type\": \"\"},")
+              print("{\"lat\": \(coordinate.latitude - 0.00026), \"lng\": \(coordinate.longitude), \"type\": \"wide\"},")
             }
         }
         .onChange(of: imagery3DMode) { oldValue, newValue in

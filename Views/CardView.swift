@@ -55,7 +55,7 @@ struct CardView: View {
       HStack {
         VStack(alignment: .leading)
         {
-          notesSection
+          notesAndBucketPointSection
         }
       }
       .padding(.top, areasViewModel.visible == true || [8,12,13,15].contains(where: { type in
@@ -105,10 +105,10 @@ struct CardView: View {
 extension CardView {
   private var imageSection: some View {
     ZStack {
-      TabView(selection:$tabSelection) {
-        if areasViewModel.visible == true {
-          ForEach(0..<areasViewModel.imageCount, id: \.self) { index in
-            GeometryReader { geometry in
+      GeometryReader { geometry in
+        TabView(selection:$tabSelection) {
+          if areasViewModel.visible == true {
+            ForEach(0..<areasViewModel.imageCount, id: \.self) { index in
               if areasViewModel.selectedArea.videoUrl != "" {
                 YouTubeView(videoID: areasViewModel.selectedArea.videoUrl)
                   .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
@@ -119,61 +119,61 @@ extension CardView {
                       .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.4)
                   )
                   .tag(0)
-              } else {
-                if UIImage(named: "\(areasViewModel.imagePath)/\(index)") != nil {
+                } else {
+                  if UIImage(named: "\(areasViewModel.imagePath)/\(index)") != nil {
+                    Image("\(areasViewModel.imagePath)/\(index)")
+                      .resizable()
+                      .scaledToFill()
+                      .tag(index)
+                  }
+                }
+            }
+          } else {
+            ForEach(0..<placesViewModel.selectedPlace.imageCount, id: \.self) { index in
+              let indexSegment = "/" + String(index)
+              if UIImage(named: areasViewModel.getImageUrl(placeName: placesViewModel.selectedPlace.name.replacingOccurrences(of: "/", with: "")).replacingOccurrences(of: "/0", with: indexSegment)) != nil {
+                Image(areasViewModel.getImageUrl(placeName: placesViewModel.selectedPlace.name.replacingOccurrences(of: "/", with: "")).replacingOccurrences(of: "/0", with: indexSegment))
+                  .resizable()
+                  .scaledToFill()
+                  .tag(index)
+              }
+            }
+          }
+          
+          if placesViewModel.visible == true && areasViewModel.imageCount < 10 {
+            ForEach(10..<15, id: \.self) { index in
+              if UIImage(named: "\(areasViewModel.imagePath)/\(index)") != nil {
+                ZStack(alignment: .bottomLeading) {
                   Image("\(areasViewModel.imagePath)/\(index)")
                     .resizable()
                     .scaledToFill()
-                    .tag(index)
-                }     
-              }
-            }
-          }
-        } else {
-          ForEach(0..<placesViewModel.selectedPlace.imageCount, id: \.self) { index in
-            let indexSegment = "/" + String(index)
-            if UIImage(named: areasViewModel.getImageUrl(placeName: placesViewModel.selectedPlace.name.replacingOccurrences(of: "/", with: "")).replacingOccurrences(of: "/0", with: indexSegment)) != nil {
-              Image(areasViewModel.getImageUrl(placeName: placesViewModel.selectedPlace.name.replacingOccurrences(of: "/", with: "")).replacingOccurrences(of: "/0", with: indexSegment))
-                .resizable()
-                .scaledToFill()
-                .tag(index)
-            }
-          }
-        }
-        
-        if placesViewModel.visible == true && areasViewModel.imageCount < 10 {
-          ForEach(10..<15, id: \.self) { index in
-            if UIImage(named: "\(areasViewModel.imagePath)/\(index)") != nil {
-              ZStack(alignment: .bottomLeading) {
-                Image("\(areasViewModel.imagePath)/\(index)")
-                  .resizable()
-                  .scaledToFill()
+                }
               }
             }
           }
         }
-      }
-      .tabViewStyle(PageTabViewStyle())
-      .onChange(of: tabSelection) { oldValue, newValue in
-        if newValue > 0 {
-          areasViewModel.ytPlayerView.stopVideo()
-        }
-      }
-      .overlay(alignment: .topTrailing) {
-        Button {
-          withAnimation(.easeInOut) {
-            areasViewModel.showCardView = false
-            if areasViewModel.visible == true {
-              areasViewModel.selectedArea = areasViewModel.areas[0]
-            }
+        .tabViewStyle(PageTabViewStyle())
+        .onChange(of: tabSelection) { oldValue, newValue in
+          if newValue > 0 {
+            areasViewModel.ytPlayerView.stopVideo()
           }
         }
-        label: {
-           Image(systemName: "xmark.circle.fill")
-            .font(.system(size: 24))
+        .overlay(alignment: .topTrailing) {
+          Button {
+            withAnimation(.easeInOut) {
+              areasViewModel.showCardView = false
+              if areasViewModel.visible == true {
+                areasViewModel.selectedArea = areasViewModel.areas[0]
+              }
+            }
+          }
+          label: {
+             Image(systemName: "xmark.circle.fill")
+              .font(.system(size: 24))
+          }
+          .foregroundColor(.white)
+          .padding()
         }
-        .foregroundColor(.white)
-        .padding()
       }
     }
   }
@@ -200,6 +200,8 @@ extension CardView {
       return
     }
     
+    areasViewModel.ytPlayerView.stopVideo()
+    
     if areasViewModel.visible == false {
       if areasViewModel.selectedArea != area {
         areasViewModel.selectedArea = area
@@ -212,7 +214,8 @@ extension CardView {
     } else {
       withAnimation(.easeInOut) {
         if area.name == "World's End" || area.name == "More-Brewer Park" || area.name == "Turkey Hill" {
-          mapStyle = areasViewModel.satelliteMapStyle
+//          mapStyle = areasViewModel.satelliteMapStyle
+          
           imagery3DMode = false
         }
         if (area.areaId == areasViewModel.selectedArea.areaId) {
@@ -309,7 +312,7 @@ extension CardView {
     .buttonStyle(.bordered)
   }
   
-  private var notesSection: some View {
+  private var notesAndBucketPointSection: some View {
     let place = placesViewModel.selectedPlace
     let design = place.type == 6 ? Font.Design.serif : Font.Design.default
     @AppStorage("ShowSpecial") var showSpecial: Bool = true
@@ -323,7 +326,7 @@ extension CardView {
         .padding(.top, areasViewModel.visible == true ? 10 : 15)
       FadingScrollView(place: place, area: area, design: design, descText: descText, path: path, descLocalizedStringKey: descLocalizedStringKey, areasViewModel: areasViewModel, placesViewModel: placesViewModel)
         .padding([.leading, .trailing], 15)
-        .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 100 : 180)
+        .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 250 : 180)
     }
   }
   

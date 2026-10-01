@@ -189,6 +189,8 @@ struct Here_s_Hingham_App: App {
                 } catch {
                   print("Error decoding JSON: \(error)")
                 }
+              } else {
+                print("trail coordinates are not json.")
               }
             }
           }

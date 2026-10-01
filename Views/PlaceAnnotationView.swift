@@ -106,7 +106,7 @@ struct PlaceAnnotationView: View {
               .foregroundStyle(foregroundColor)
               .font(Font.caption)
               .fontWeight(fontWeight)
-              .customStroke(color: colorScheme == .dark ? .clear : imagery3DMode == true ? .black : .white, width: imagery3DMode == true ? 0.2 : 0.0)
+//              .customStroke(color: colorScheme == .dark ? .clear : imagery3DMode == true ? .black : .white, width: imagery3DMode == true ? 0.2 : 0.0)
               .padding(.top, titlePadding)
               .opacity(opacity)
           }

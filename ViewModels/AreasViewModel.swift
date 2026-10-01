@@ -52,9 +52,8 @@ class AreasViewModel: ObservableObject {
   @Published var showAddToBucketList = false
   @Published var iconResizePercent: Double = 0.0
   @Published var satelliteMapStyle = MapStyle.imagery(elevation: .realistic)
-  @Published var standardMapStyle = MapStyle.standard(elevation: .realistic)
-//  @Published var standardMapStyle = MapStyle.standard(pointsOfInterest: .including([]))
-  @Published var previewHeightMultiple = 0.75
+  @Published var standardMapStyle = MapStyle.standard(pointsOfInterest: .including([]))
+  @Published var cardHeightMultiple = 0.75
   @Published var ytPlayerView = YTPlayerView()
   @Published var statusObserver: NSKeyValueObservation?
   @Published var scrollItemId = 0
