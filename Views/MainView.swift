@@ -502,12 +502,12 @@ extension MainView {
               }
             }
           }
-//          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.23459, longitude:  -70.86681), anchor: .topLeading) {
-//              Image("TriphammerPondTrails")
+//          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.19199, longitude: -70.87674), anchor: .topLeading)
+//          {
+//              Image("GeorgeWashingtonForest")
 //                  .resizable()
 //                  .scaledToFit()
 //          }
-
 //          index == 18 ? .brown : index == 16 ? .gray : index == 17 ? .red : index == 30 ? .green : index == 13 ? .blue : index == 26 ? .orange : index == 14 ? .yellow : index == 15 ? .white :
           
           ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
@@ -522,10 +522,11 @@ extension MainView {
         .ignoresSafeArea()
         .onTapGesture { position in
             if let coordinate = proxy.convert(position, from: .local) {
-              print("{\"lat\": \(coordinate.latitude - 0.00026), \"lng\": \(coordinate.longitude), \"type\": \"wide\"},")
+              print("{\"lat\": \(coordinate.latitude - 0.00025), \"lng\": \(coordinate.longitude), \"type\": \"wide\"},")
             }
         }
         .onChange(of: imagery3DMode) { oldValue, newValue in
+          
           mapStyle = newValue == true ? areasViewModel.satelliteMapStyle : areasViewModel.standardMapStyle
         }
         .onMapCameraChange(frequency: .continuous) { context in
