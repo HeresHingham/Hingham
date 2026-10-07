@@ -26,7 +26,7 @@ struct PlaceAnnotationView: View {
   @State private var isRotated = false
 
   var body: some View {
-    var name = placeFilter != .None ? placeName : shortName
+    var name = placeFilter != .None && placeFilter != .Park ? placeName : shortName
     let fontWeight = areaName == "World's End" || areaName == "More-Brewer" ? Font.Weight.semibold : Font.Weight.regular
     // let strokeWidth = (type < 10 || type == 15) && imagery3DMode == false ? 0.5 : 0.0
     var zIndex = 0.0
@@ -55,7 +55,11 @@ struct PlaceAnnotationView: View {
     let zoomAdjustedIconSize = iconSize * 2
     newIconSize = resizePercent != 0 ? zoomAdjustedIconSize * resizePercent : zoomAdjustedIconSize
     @AppStorage("ShowSpecials") var showSpecials: Bool = true
-//    print(iconResizePercent, zoomAdjustedIconSize, newIconSize)
+    
+    if newIconSize < 5.0 && newIconSize > 0.0 {
+      //whaprint(iconResizePercent, zoomAdjustedIconSize, newIconSize)
+      newIconSize *= 5
+    }
     
     return ZStack {
       if specialImageName != "" && showSpecials == true {
