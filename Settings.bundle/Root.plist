@@ -66,11 +66,11 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Skip Area Card</string>
+			<string>Show Area Card</string>
 			<key>Key</key>
-			<string>SkipAreaCard</string>
+			<string>ShowAreaCard</string>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>

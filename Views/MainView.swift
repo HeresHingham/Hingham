@@ -33,7 +33,7 @@ struct MainView: View {
   @State private var isInitialView: Bool = true
   @State private var tabSelection: Int = 0
   @State private var currentPage: Int = 0
-  @State private var skipAreaCard: Bool = false
+  @State private var showAreaCard: Bool = true
   @State private var showHouses: Bool = true
   @State private var showSpecials: Bool = true
   @State private var showLabels: Bool = true
@@ -44,16 +44,18 @@ struct MainView: View {
   @State private var interactionModes: MapInteractionModes = [.all]
   @State private var imagery3DMode = false
   @State private var trailCoordinateArrays = [[CLLocationCoordinate2D]]()
+  @State private var currentDistanceDelta: Double = 100.0
   @State private var trailStrokeStyleNarrow = StrokeStyle(
-    lineWidth: 0.5,
-      lineCap: .round,
-      lineJoin: .round,
+    lineWidth: 1.0,
       dash: [2, 3]
   )
   @State private var trailStrokeStyleWide = StrokeStyle(
     lineWidth: 1.5,
-    lineCap: .round,
-    lineJoin: .round
+  )
+  
+  @State private var trailStrokeStyleUntended = StrokeStyle(
+    lineWidth: 0.5,
+    dash: [1, 2]
   )
   
   @ObservedObject var location: LocationManager = LocationManager()
@@ -122,7 +124,7 @@ struct MainView: View {
           
           if areasViewModel.showCardView == true {
             CardView(showPlaceDetail: $showPlaceCard, mapStyle: $mapStyle, imagery3DMode: $imagery3DMode, area: areasViewModel.selectedArea)
-              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 365 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple)
+              .frame(maxWidth: UIDevice.current.userInterfaceIdiom == .pad ? 465 : UIScreen.main.bounds.width * 0.93, minHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple, maxHeight: UIScreen.main.bounds.height * areasViewModel.cardHeightMultiple)
               .shadow(color: .black.opacity(0.3), radius: 20)
               .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
               .padding(.bottom, UIDevice.current.userInterfaceIdiom == .pad ? 20 : -10)
@@ -179,8 +181,8 @@ struct MainView: View {
       .onAppear(perform: {
         @AppStorage("HomeArea") var home: Int = -1
         homeAreaId = home
-        @AppStorage("SkipAreaCard") var skip: Bool = false
-        skipAreaCard = skip
+        @AppStorage("ShowAreaCard") var showAreaCard: Bool = true
+        showAreaCard = showAreaCard
         @AppStorage("ShowHouses") var showHouse: Bool = true
         showHouses = showHouse
         @AppStorage("ShowSpecials") var showSpecial: Bool = true
@@ -351,9 +353,9 @@ extension MainView {
               let previewWasVisible = areasViewModel.showCardView
               areasViewModel.scrollItemId = 0
 
-              if ((area.areaId == areasViewModel.selectedArea.areaId && previewWasVisible == true) || (skipAreaCard == true && area.areaId != 11 && area.areaId != 12 && area.name != "More-Brewer Park")) {
+              if ((area.areaId == areasViewModel.selectedArea.areaId && previewWasVisible == true) || (showAreaCard == false && area.areaId != 11 && area.areaId != 12 && area.name != "More-Brewer Park")) {
                 withAnimation(.easeInOut) {
-                  if skipAreaCard == true {
+                  if showAreaCard == false {
                     areasViewModel.selectedArea = area
                   }
                   areasViewModel.distance = 0.0
@@ -378,7 +380,7 @@ extension MainView {
                 placesViewModel.selectedPlace = SchemaV1.Place()
               }
               withAnimation(.easeInOut) {
-                if skipAreaCard == false || areasViewModel.isBucketPointList(area: area) == true {
+                if showAreaCard == true || areasViewModel.isBucketPointList(area: area) == true {
                   areasViewModel.showCardView = true
                   areasViewModel.iconResizePercent = 0.0
                   areasViewModel.areaImageUrl = ""
@@ -464,7 +466,7 @@ extension MainView {
     return ZStack {
       MapReader { proxy in
         Map(position: $areasViewModel.mapCameraPosition, bounds: MapCameraBounds(minimumDistance: 0), interactionModes: interactionModes, scope: nil) {
-          if currentAltitudeFeet < maximumAltitudeFeet {
+          if currentAltitudeFeet < maximumAltitudeFeet || (areasViewModel.placeFilter != .None && currentDistanceDelta < 8000) {
             ForEach(places) { place in
               if showHouses == true || (showHouses == false && place.type != 6) {
                 Annotation("", coordinate: place.coordinates) {
@@ -512,7 +514,7 @@ extension MainView {
           
           ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
             MapPolyline(coordinates: areasViewModel.trailCoordinateArrays[index])
-              .stroke(colorScheme == .dark ? .white : .black, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : trailStrokeStyleNarrow)
+              .stroke(colorScheme == .dark ? .white : .black, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleNarrow)
               .mapOverlayLevel(level: .aboveLabels)
           }
 
@@ -522,7 +524,7 @@ extension MainView {
         .ignoresSafeArea()
         .onTapGesture { position in
             if let coordinate = proxy.convert(position, from: .local) {
-              print("{\"lat\": \(coordinate.latitude - 0.00025), \"lng\": \(coordinate.longitude), \"type\": \"wide\"},")
+              print("{\"lat\": \(coordinate.latitude - 0.00025), \"lng\": \(coordinate.longitude), \"type\": \"\"},")
             }
         }
         .onChange(of: imagery3DMode) { oldValue, newValue in
@@ -533,6 +535,7 @@ extension MainView {
           @AppStorage("IconAltitudeMaximum") var iconAltitude = 6000
           areasViewModel.iconAltitudeMaximum = areasViewModel.iconAltitudeMaximum != 50000 ? iconAltitude : areasViewModel.iconAltitudeMaximum
           let distanceDelta = areasViewModel.distance - context.camera.distance
+          currentDistanceDelta = abs(distanceDelta)
           
           if areasViewModel.distance == 0.0 {
             areasViewModel.distance = context.camera.distance

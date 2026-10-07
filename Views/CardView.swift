@@ -58,7 +58,7 @@ struct CardView: View {
           notesAndBucketPointSection
         }
       }
-      .padding(.top, areasViewModel.visible == true || [8,12,13,15].contains(where: { type in
+      .padding(.top, areasViewModel.visible == true || [7,8,12,13,15].contains(where: { type in
         type == placesViewModel.selectedPlace.type}) ? -40 : -10)
       
       HStack
@@ -326,7 +326,7 @@ extension CardView {
         .padding(.top, areasViewModel.visible == true ? 10 : 15)
       FadingScrollView(place: place, area: area, design: design, descText: descText, path: path, descLocalizedStringKey: descLocalizedStringKey, areasViewModel: areasViewModel, placesViewModel: placesViewModel)
         .padding([.leading, .trailing], 15)
-        .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 250 : 180)
+        .frame(height: UIDevice.current.userInterfaceIdiom == .pad ? 100 : 180)
     }
   }
   
