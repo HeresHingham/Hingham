@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "LaunchScreen 1.jpg",
+      "filename" : "Launch Screen.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 6.jpg",
+      "filename" : "Launch Screen Dark.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LaunchScreen 2.jpg",
+      "filename" : "Launch Screen 1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -28,12 +28,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 7.jpg",
+      "filename" : "Launch Screen Dark 1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LaunchScreen 3.jpg",
+      "filename" : "Launch Screen 2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -44,14 +44,13 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 8.jpg",
+      "filename" : "Launch Screen Dark 2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     },
     {
-      "filename" : "LaunchScreen 4.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
+      "filename" : "Launch Screen 3.jpg",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
@@ -61,15 +60,13 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 9.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
+      "filename" : "Launch Screen Dark 3.jpg",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "LaunchScreen 5.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
+      "filename" : "Launch Screen 4.jpg",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
@@ -79,15 +76,13 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 10.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
+      "filename" : "Launch Screen Dark 4.jpg",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "LaunchScreen 6.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
+      "filename" : "Launch Screen 5.jpg",
+      "idiom" : "iphone",
       "scale" : "3x"
     },
     {
@@ -97,16 +92,14 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 11.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
+      "filename" : "Launch Screen Dark 5.jpg",
+      "idiom" : "iphone",
       "scale" : "3x"
     },
     {
-      "filename" : "iPadLaunchLight 1.jpg",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "width-class" : "regular"
+      "filename" : "Launch Screen iPad.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x"
     },
     {
       "appearances" : [
@@ -115,34 +108,14 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark.jpg",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "width-class" : "regular"
+      "filename" : "Launch Screen iPad Dark.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x"
     },
     {
-      "filename" : "iPadLaunchLight.jpg",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "width-class" : "regular"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "iPadLaunchDark 1.jpg",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "width-class" : "regular"
-    },
-    {
-      "filename" : "iPadLaunchLight 4.jpg",
-      "idiom" : "universal",
-      "scale" : "3x",
-      "width-class" : "regular"
+      "filename" : "Launch Screen iPad 1.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x"
     },
     {
       "appearances" : [
@@ -151,70 +124,9 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iPadLaunchDark 3.jpg",
-      "idiom" : "universal",
-      "scale" : "3x",
-      "width-class" : "regular"
-    },
-    {
-      "filename" : "iPadLaunchLight 2.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "width-class" : "regular"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "iPadLaunchDark 4.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "width-class" : "regular"
-    },
-    {
-      "filename" : "iPadLaunchLight 3.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "width-class" : "regular"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "iPadLaunchDark 2.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "width-class" : "regular"
-    },
-    {
-      "filename" : "iPadLaunchLight 5.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
-      "scale" : "3x",
-      "width-class" : "regular"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "iPadLaunchDark 5.jpg",
-      "height-class" : "regular",
-      "idiom" : "universal",
-      "scale" : "3x",
-      "width-class" : "regular"
+      "filename" : "Launch Screen iPad Dark 1.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

@@ -45,17 +45,23 @@ struct MainView: View {
   @State private var imagery3DMode = false
   @State private var trailCoordinateArrays = [[CLLocationCoordinate2D]]()
   @State private var currentDistanceDelta: Double = 100.0
-  @State private var trailStrokeStyleNarrow = StrokeStyle(
-    lineWidth: 1.0,
-      dash: [2, 3]
-  )
+
   @State private var trailStrokeStyleWide = StrokeStyle(
+    lineWidth: 2.0,
+    lineCap: .butt,
+    lineJoin: .round
+  )
+  
+  @State private var trailStrokeStyleRegular = StrokeStyle(
     lineWidth: 1.5,
+    lineCap: .butt,
+    lineJoin: .round
   )
   
   @State private var trailStrokeStyleUntended = StrokeStyle(
-    lineWidth: 0.5,
-    dash: [1, 2]
+    lineWidth: 1.0,
+    lineCap: .butt,
+    lineJoin: .round
   )
   
   @ObservedObject var location: LocationManager = LocationManager()
@@ -289,6 +295,7 @@ struct FilterButtonView: View {
       areasViewModel.iconResizePercent = 0.0
       areasViewModel.distance = 0.0
       areasViewModel.selectedTour.tourId = -1
+      areasViewModel.filterRegionSet = false
       let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
       let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
       areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
@@ -392,7 +399,7 @@ extension MainView {
         .annotationTitles(.hidden)
       }
       MapPolygon(coordinates: hinghamCoordinates)
-        .stroke(.accent, lineWidth: 2)
+        .stroke(colorScheme == .dark ? .accentTab : .accent, lineWidth: 2)
         .foregroundStyle(.accent.opacity(0.1))
     }
     .onChange(of: imagery3DMode) { oldValue, newValue in
@@ -471,27 +478,17 @@ extension MainView {
               if showHouses == true || (showHouses == false && place.type != 6) {
                 Annotation("", coordinate: place.coordinates) {
                   PlaceAnnotationView(areaName: place.areaName, placeName: place.name, shortName: place.shortName, specials: place.specials, type: place.type, iconSize: place.iconSize, selected: place.selected, opacity: annotationOpacity, iconResizePercent: areasViewModel.iconResizePercent, placeFilter: areasViewModel.placeFilter, imagery3DMode: imagery3DMode, showLabels: showLabels)
-                    .shadow(radius: 10)
                     .onTapGesture {
                       areasViewModel.loadingPlaces = false
                       if place.type < 20 {
                         areasViewModel.updateAddToBucketlist(place.documentID)
                         areasViewModel.areaImageUrl = ""
-                        if place.videoUrl != "" {
-                          Task {
-                            withAnimation(.easeInOut) {
-                              placesViewModel.setPlaceSelected(area, place)
-                              areasViewModel.visible = false
-                              areasViewModel.showCardView = true
-                              areasViewModel.areaImageUrl = "\(place.areaName)/\(place.name)/0"
-                            }
-                          }
-                        } else {
+                        Task {
                           withAnimation(.easeInOut) {
                             placesViewModel.setPlaceSelected(area, place)
                             areasViewModel.visible = false
                             areasViewModel.showCardView = true
-                            if place.name == "Iron Horse Statue" {
+                            if place.videoUrl != "" || place.name == "Iron Horse Statue" {
                               areasViewModel.scrollItemId = 0
                               areasViewModel.areaImageUrl = "\(place.areaName)/\(place.name)/0"
                             }
@@ -504,18 +501,13 @@ extension MainView {
               }
             }
           }
-//          Annotation("Location", coordinate: CLLocationCoordinate2D(latitude: 42.19199, longitude: -70.87674), anchor: .topLeading)
-//          {
-//              Image("GeorgeWashingtonForest")
-//                  .resizable()
-//                  .scaledToFit()
-//          }
-//          index == 18 ? .brown : index == 16 ? .gray : index == 17 ? .red : index == 30 ? .green : index == 13 ? .blue : index == 26 ? .orange : index == 14 ? .yellow : index == 15 ? .white :
-          
-          ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
-            MapPolyline(coordinates: areasViewModel.trailCoordinateArrays[index])
-              .stroke(colorScheme == .dark ? .white : .black, style: areasViewModel.trailTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleNarrow)
-              .mapOverlayLevel(level: .aboveLabels)
+                    
+          if areasViewModel.distance < 2400 {
+            ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
+              MapPolyline(coordinates: SplineGenerator.generateSpline(from: areasViewModel.trailCoordinateArrays[index], segments: 30))
+                .stroke(areasViewModel.trailTypes[index] == "terrific" ? .red : colorScheme == .dark ? .white : .black, style: areasViewModel.trailLineTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailLineTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleRegular)
+                .mapOverlayLevel(level: .aboveLabels)
+            }
           }
 
           UserAnnotation()
@@ -532,7 +524,7 @@ extension MainView {
           mapStyle = newValue == true ? areasViewModel.satelliteMapStyle : areasViewModel.standardMapStyle
         }
         .onMapCameraChange(frequency: .continuous) { context in
-          @AppStorage("IconAltitudeMaximum") var iconAltitude = 6000
+          @AppStorage("IconAltitudeMaximum") var iconAltitude = 18600
           areasViewModel.iconAltitudeMaximum = areasViewModel.iconAltitudeMaximum != 50000 ? iconAltitude : areasViewModel.iconAltitudeMaximum
           let distanceDelta = areasViewModel.distance - context.camera.distance
           currentDistanceDelta = abs(distanceDelta)
@@ -562,6 +554,7 @@ extension MainView {
             let span = MKCoordinateSpan(latitudeDelta: UIDevice.current.userInterfaceIdiom == .pad ? 0.145 : 0.05, longitudeDelta: UIDevice.current.userInterfaceIdiom == .pad ? 0.145 : 0.05)
             areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.22527,longitude: -70.88028), span: span))
             areasViewModel.loadingTour = false
+            print("")
           }
         }
         .background(.white)
@@ -896,4 +889,78 @@ extension Date {
         return Calendar.current.dateComponents([.weekday], from: self).weekday! - 1
     }
 }
+
+extension CLLocationCoordinate2D {
+    /// Calculates an intermediate coordinate between p1 and p2 using Catmull-Rom interpolation.
+    /// - Parameters:
+    ///   - t: A value from 0.0 (at p1) to 1.0 (at p2).
+    static func catmullRom(p0: CLLocationCoordinate2D, p1: CLLocationCoordinate2D, p2: CLLocationCoordinate2D, p3: CLLocationCoordinate2D, t: Double) -> CLLocationCoordinate2D {
+        let t2 = t * t
+        let t3 = t2 * t
+        
+        // Catmull-Rom matrix math applied to Latitude
+        let lat = 0.5 * (
+            (2.0 * p1.latitude) +
+            (-p0.latitude + p2.latitude) * t +
+            (2.0 * p0.latitude - 5.0 * p1.latitude + 4.0 * p2.latitude - p3.latitude) * t2 +
+            (-p0.latitude + 3.0 * p1.latitude - 3.0 * p2.latitude + p3.latitude) * t3
+        )
+        
+        // Catmull-Rom matrix math applied to Longitude
+        let lng = 0.5 * (
+            (2.0 * p1.longitude) +
+            (-p0.longitude + p2.longitude) * t +
+            (2.0 * p0.longitude - 5.0 * p1.longitude + 4.0 * p2.longitude - p3.longitude) * t2 +
+            (-p0.longitude + 3.0 * p1.longitude - 3.0 * p2.longitude + p3.longitude) * t3
+        )
+        
+        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
+    }
+}
+
+struct SplineGenerator {
+    /// Takes an array of coordinates and generates a smooth, curved path.
+    /// - Parameter segments: The number of intermediate points to generate between each original pair.
+    static func generateSpline(from coordinates: [CLLocationCoordinate2D], segments: Int = 20) -> [CLLocationCoordinate2D] {
+        guard coordinates.count >= 2 else { return coordinates }
+        
+        var smoothCoordinates: [CLLocationCoordinate2D] = []
+        let count = coordinates.count
+        
+        // Loop through all points to interpolate between index i and i+1
+        for i in 0..<count - 1 {
+            // Extrapolate virtual endpoints for the start and end of the line
+            let p0 = i == 0 ? extrapolate(from: coordinates[1], to: coordinates[0]) : coordinates[i - 1]
+            let p1 = coordinates[i]
+            let p2 = coordinates[i + 1]
+            let p3 = i == count - 2 ? extrapolate(from: coordinates[count - 2], to: coordinates[count - 1]) : coordinates[i + 2]
+            
+            // Add the original point
+            smoothCoordinates.append(p1)
+            
+            // Generate intermediate points
+            for step in 1..<segments {
+                let t = Double(step) / Double(segments)
+                let intermediatePoint = CLLocationCoordinate2D.catmullRom(p0: p0, p1: p1, p2: p2, p3: p3, t: t)
+                smoothCoordinates.append(intermediatePoint)
+            }
+        }
+        
+        // Add the absolute final point
+        if let last = coordinates.last {
+            smoothCoordinates.append(last)
+        }
+        
+        return smoothCoordinates
+    }
+    
+    // Helper to calculate dummy boundary control points for the outer edges of the line
+    private static func extrapolate(from pA: CLLocationCoordinate2D, to pB: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(
+            latitude: pB.latitude + (pB.latitude - pA.latitude),
+            longitude: pB.longitude + (pB.longitude - pA.longitude)
+        )
+    }
+}
+
 
