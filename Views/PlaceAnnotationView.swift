@@ -41,24 +41,28 @@ struct PlaceAnnotationView: View {
     @AppStorage("ShowSpecial") var showSpecial: Bool = true
 
     if selected == true && areaName != "World's End" && areaName != "More-Brewer" && placeName != "Iron Horse Statue" {
-      foregroundColor = colorScheme == .dark ? .white : imagery3DMode == true ? .white : .black
-      name = placeName
-      // strokeWidth = 2.5
+      if placeFilter != .Park {
+        foregroundColor = colorScheme == .dark ? .white : imagery3DMode == true ? .white : .black
+        name = placeName
+      }
       zIndex = 100.0
     } else {
       foregroundColor = imagery3DMode == true || colorScheme == .dark ? .white : .black
     }
 
     let specialImageName = imageNameIfSpecialIsToday(special: specials, showSpecial: showSpecial)
-    
     let resizePercent = iconResizePercent
     let zoomAdjustedIconSize = iconSize * 2
+    
     newIconSize = resizePercent != 0 ? zoomAdjustedIconSize * resizePercent : zoomAdjustedIconSize
     @AppStorage("ShowSpecials") var showSpecials: Bool = true
     
     if newIconSize < 5.0 && newIconSize > 0.0 {
-      //whaprint(iconResizePercent, zoomAdjustedIconSize, newIconSize)
-      newIconSize *= 5
+      newIconSize *= 2.5
+    }
+    
+    if placeFilter == .Park {
+      newIconSize = max(placeName.hasSuffix("Path") || placeName.hasSuffix("Trail") ? 64 : 86, newIconSize)
     }
     
     return ZStack {
@@ -97,12 +101,12 @@ struct PlaceAnnotationView: View {
               .frame(width: newIconSize, height: newIconSize)
               .zIndex(zIndex)
           } else {
-            Image("\(areaName)/\(placeName.replacingOccurrences(of: "/", with: ""))/icon")
-              .resizable()
-              .scaledToFit()
-              .frame(width: newIconSize, height: newIconSize)
-              .zIndex(zIndex)
-              .opacity(opacity)
+              Image("\(areaName)/\(placeName.replacingOccurrences(of: "/", with: ""))/icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: newIconSize, height: newIconSize)
+                .zIndex(zIndex)
+                .opacity(opacity)
           }
           
           if showLabels == true {
@@ -155,3 +159,12 @@ extension View {
     }
 }
 
+func loadBundleImage(folder: String, name: String, ext: String) -> UIImage? {
+    let pathInBundle = "\(folder)/\(name)"
+    print(pathInBundle, ext)
+  
+    if let path = Bundle.main.path(forResource: pathInBundle, ofType: ext) {
+        return UIImage(contentsOfFile: path)
+    }
+    return nil
+}
