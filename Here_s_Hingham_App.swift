@@ -157,6 +157,19 @@ struct Here_s_Hingham_App: App {
           }
         }
         
+        let trailPointQuery = db.collection("HinghamTrailPoint")
+        
+        trailPointQuery.getDocuments { queryTrailPoint, err in
+          for document in queryTrailPoint!.documents {
+            let trailPoint = SchemaV1.TrailPoint()
+            trailPoint.documentID = document.documentID
+            trailPoint.lat = document.get("lat") as! Double
+            trailPoint.lng = document.get("lng") as! Double
+            trailPoint.type = document.get("type") as! String
+            areasViewModel.addTrailPoint(trailPoint)
+          }
+        }
+        
         let trailQuery = db.collection("HinghamTrail")
         
         trailQuery.getDocuments { queryTrail, err in
@@ -165,9 +178,10 @@ struct Here_s_Hingham_App: App {
             trail.documentID = document.documentID
             trail.placeDocId = document.get("placeDocId") as! String
             trail.trailCoordinates = document.get("trailCoordinates") as! String
+            trail.trailType = document.get("trailType") as! String
             areasViewModel.addTrail(trail)
           }
-          
+                    
           let parkPlaces: [SchemaV1.Place] = placesViewModel.places.filter({ $0.type == 8 })
           areasViewModel.trailCoordinateArrays = [[CLLocationCoordinate2D]]()
 
@@ -185,9 +199,10 @@ struct Here_s_Hingham_App: App {
                     trailCoordinateType = trailCoordinate.type
                   }
                   areasViewModel.trailCoordinateArrays.append(trailCoordinateArray)
-                  areasViewModel.trailTypes.append(trailCoordinateType)
+                  areasViewModel.trailLineTypes.append(trailCoordinateType)
+                  areasViewModel.trailTypes.append(trail.trailType)
                 } catch {
-                  print("Error decoding JSON: \(error)")
+                  print("Error decoding JSON: \(error), documentID \(trail.documentID)")
                 }
               } else {
                 print("trail coordinates are not json.")

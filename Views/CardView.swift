@@ -59,7 +59,7 @@ struct CardView: View {
         }
       }
       .padding(.top, areasViewModel.visible == true || [7,8,12,13,15].contains(where: { type in
-        type == placesViewModel.selectedPlace.type}) ? -40 : -10)
+        type == placesViewModel.selectedPlace.type}) && placesViewModel.selectedPlace.googleId == "" ? -40 : -10)
       
       HStack
       {

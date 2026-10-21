@@ -24,7 +24,9 @@ class AreasViewModel: ObservableObject {
   @Published var tours: [SchemaV1.Tour] = []
   @Published var videos: [SchemaV1.Video] = []
   @Published var trails: [SchemaV1.Trail] = []
+  @Published var trailPoints: [SchemaV1.TrailPoint] = []
   @Published var trailCoordinateArrays: [[CLLocationCoordinate2D]] = []
+  @Published var trailLineTypes: [String] = []
   @Published var trailTypes: [String] = []
   @Published var previewArea = SchemaV1.Area()
   @Published var selectedArea: SchemaV1.Area = SchemaV1.Area() {
@@ -46,6 +48,7 @@ class AreasViewModel: ObservableObject {
   @Published var visible = true
   @Published var firstScreenVisible = true
   @Published var distance: Double = 0.0
+  @Published var cameraDistance: Double = 0.0
   @Published var imagePath = ""
   @Published var imageCount = 0
   @Published var showCardView = false
@@ -61,6 +64,7 @@ class AreasViewModel: ObservableObject {
   @Published var loadingPlaces = false
   @Published var loadingTour = true
   @Published var imagery3DMode = false
+  @Published var filterRegionSet = false
   
   @Published var placeFilter: PlaceFilter = .None {
     didSet {
@@ -107,6 +111,10 @@ class AreasViewModel: ObservableObject {
     
   public func addTrail(_ trail: SchemaV1.Trail) {
     trails.append(trail)
+  }
+  
+  public func addTrailPoint(_ trailPoint: SchemaV1.TrailPoint) {
+    trailPoints.append(trailPoint)
   }
   
   public func updateRegion(_ mapCameraPosition: MapCameraPosition) {
@@ -159,7 +167,7 @@ class AreasViewModel: ObservableObject {
       if visible == true || placeName == "" {
         imageUrl = (path == "" ? "Square" : selectedArea.shortName) + "/Area/0"
       } else {
-        path = selectedArea.shortName == "" ? "tour" : selectedArea.shortName
+        path = selectedArea.shortName // == "" ? "tour" : selectedArea.shortName
         let placeImage = "/" + placeName + "/0"
         imageUrl = path + placeImage
         
@@ -191,6 +199,8 @@ class AreasViewModel: ObservableObject {
           return "World's End" + placeImage
         } else if UIImage(named: "More-Brewer" + placeImage) != nil {
           return "More-Brewer" + placeImage
+        } else if UIImage(named: "Kickapoo" + placeImage) != nil {
+          return "Kickapoo" + placeImage
         }
       }
     } else {

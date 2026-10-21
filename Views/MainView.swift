@@ -285,20 +285,22 @@ struct FilterButtonView: View {
   
   var body: some View {
     Button(action: {
-      areasViewModel.firstScreenVisible = false
-      areasViewModel.loadingTour = false
-      areasViewModel.selectedTour = SchemaV1.Tour()
-      areasViewModel.selectedArea = SchemaV1.Area()
-      areasViewModel.iconAltitudeMaximum = 50000
-      areasViewModel.placeFilter = type
-      areasViewModel.visible = false
-      areasViewModel.iconResizePercent = 0.0
-      areasViewModel.distance = 0.0
-      areasViewModel.selectedTour.tourId = -1
-      areasViewModel.filterRegionSet = false
-      let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
-      let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
-      areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
+      withAnimation(.easeInOut) {        
+        areasViewModel.firstScreenVisible = false
+        areasViewModel.loadingTour = false
+        areasViewModel.selectedTour = SchemaV1.Tour()
+        areasViewModel.selectedArea = SchemaV1.Area()
+        areasViewModel.iconAltitudeMaximum = 50000
+        areasViewModel.placeFilter = type
+        areasViewModel.visible = false
+        areasViewModel.iconResizePercent = 0.0
+        areasViewModel.distance = 0.0
+        areasViewModel.selectedTour.tourId = -1
+        areasViewModel.filterRegionSet = false
+        let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
+        areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
+      }
       
 //      } else if title == "Update Yelp" {
 //        let dataService = DataService()
@@ -502,21 +504,27 @@ extension MainView {
             }
           }
                     
-          if areasViewModel.distance < 2400 {
+          if areasViewModel.cameraDistance < 12000 && areasViewModel.cameraDistance > 0 {
             ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
-              MapPolyline(coordinates: SplineGenerator.generateSpline(from: areasViewModel.trailCoordinateArrays[index], segments: 30))
-                .stroke(areasViewModel.trailTypes[index] == "terrific" ? .red : colorScheme == .dark ? .white : .black, style: areasViewModel.trailLineTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailLineTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleRegular)
-                .mapOverlayLevel(level: .aboveLabels)
+                MapPolyline(coordinates: SplineGenerator.generateSpline(from: areasViewModel.trailCoordinateArrays[index], segments: 30))
+                  .stroke(areasViewModel.trailTypes[index] == "terrific" ? .red : colorScheme == .dark ? .white : .black, style: areasViewModel.trailLineTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailLineTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleRegular)
+                  .mapOverlayLevel(level: .aboveLabels)
+            }
+            ForEach(areasViewModel.trailPoints) { trailPoint in
+              Annotation("", coordinate: CLLocationCoordinate2D(latitude: trailPoint.lat, longitude: trailPoint.lng)) {
+                  Image("TrailIcons/\(trailPoint.type)")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24, height: 24)
+              }
             }
           }
-
           UserAnnotation()
-
         }
         .ignoresSafeArea()
         .onTapGesture { position in
             if let coordinate = proxy.convert(position, from: .local) {
-              print("{\"lat\": \(coordinate.latitude - 0.00025), \"lng\": \(coordinate.longitude), \"type\": \"\"},")
+              print("{\"lat\": \(coordinate.latitude - 0.00025), \"lng\": \(coordinate.longitude), \"type\": \"TrailHead\"},")
             }
         }
         .onChange(of: imagery3DMode) { oldValue, newValue in
@@ -528,6 +536,7 @@ extension MainView {
           areasViewModel.iconAltitudeMaximum = areasViewModel.iconAltitudeMaximum != 50000 ? iconAltitude : areasViewModel.iconAltitudeMaximum
           let distanceDelta = areasViewModel.distance - context.camera.distance
           currentDistanceDelta = abs(distanceDelta)
+          areasViewModel.cameraDistance = context.camera.distance
           
           if areasViewModel.distance == 0.0 {
             areasViewModel.distance = context.camera.distance
@@ -555,6 +564,7 @@ extension MainView {
             areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.22527,longitude: -70.88028), span: span))
             areasViewModel.loadingTour = false
             print("")
+            areasViewModel.selectedArea.areaId = -2
           }
         }
         .background(.white)

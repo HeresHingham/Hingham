@@ -22,23 +22,41 @@
 
 /* Begin PBXFileReference section */
 		7E0A228E30703CAF002FB2CF /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E0C0B2F30857CCD009AF630 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E1C24D8306BF2A70011426A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E1C2510306C47B30011426A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E3BB6283082713800702C52 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E3CA2103082A3F40002B6A0 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E50713E307040EC006837A7 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E68B9823082888600DE7491 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E72B5E630827438006FA4E2 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E8BA3D83082AB6700A6B1F8 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E8E5A2C3082A80C008C9069 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E91ED31306C63E8006B4B82 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E9D007330852CF800E7255F /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EA148C5306C551100D0F08D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EAC8634306D4E9B00E0375A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EBE482A3071407500479E93 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EBF239B3086E8140095C433 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EBF4371306FE76F00D4DAA8 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EC2E11D3082607B0035802B /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7ECDD79F30769DBD005301B5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7ECE1D5E30828F36003ADB5E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7ED5A7703082AA1C002851D5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EDAF66E30703672004AB2DC /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EE65B283077CB0C00640844 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EF42FF4307EBA75009833B1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EF500693082AABE00B58DE5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EF6545C3083BF5F00BC02A5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EFFE16330827AB9004F56C7 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -87,6 +105,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E0C0B3E30857CCD009AF630 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E1C24E5306BF2A70011426A /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -107,12 +130,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E3BB6373082713800702C52 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E3CA21F3082A3F40002B6A0 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E4F59863069897E00DAA80D /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
 		7E50714B307040EC006837A7 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E68B9913082888600DE7491 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +181,24 @@
 				7EDAF66E30703672004AB2DC /* Here's Hingham!.xcodeproj */,
 				7E0A228E30703CAF002FB2CF /* Here's Hingham!.xcodeproj */,
 				7E50713E307040EC006837A7 /* Here's Hingham!.xcodeproj */,
+				7EBE482A3071407500479E93 /* Here's Hingham!.xcodeproj */,
+				7ECDD79F30769DBD005301B5 /* Here's Hingham!.xcodeproj */,
+				7EE65B283077CB0C00640844 /* Here's Hingham!.xcodeproj */,
+				7EF42FF4307EBA75009833B1 /* Here's Hingham!.xcodeproj */,
+				7EC2E11D3082607B0035802B /* Here's Hingham!.xcodeproj */,
+				7E3BB6283082713800702C52 /* Here's Hingham!.xcodeproj */,
+				7E72B5E630827438006FA4E2 /* Here's Hingham!.xcodeproj */,
+				7EFFE16330827AB9004F56C7 /* Here's Hingham!.xcodeproj */,
+				7E68B9823082888600DE7491 /* Here's Hingham!.xcodeproj */,
+				7ECE1D5E30828F36003ADB5E /* Here's Hingham!.xcodeproj */,
+				7E3CA2103082A3F40002B6A0 /* Here's Hingham!.xcodeproj */,
+				7E8E5A2C3082A80C008C9069 /* Here's Hingham!.xcodeproj */,
+				7ED5A7703082AA1C002851D5 /* Here's Hingham!.xcodeproj */,
+				7EF500693082AABE00B58DE5 /* Here's Hingham!.xcodeproj */,
+				7E8BA3D83082AB6700A6B1F8 /* Here's Hingham!.xcodeproj */,
+				7EF6545C3083BF5F00BC02A5 /* Here's Hingham!.xcodeproj */,
+				7E9D007330852CF800E7255F /* Here's Hingham!.xcodeproj */,
+				7E0C0B2F30857CCD009AF630 /* Here's Hingham!.xcodeproj */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -152,12 +208,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E72B5F530827438006FA4E2 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E76048030696F32001221FB /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E8BA3E63082AB6700A6B1F8 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E8E5A3B3082A80C008C9069 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E91ED3E306C63E8006B4B82 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E9D008230852CF800E7255F /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -182,12 +258,37 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7EBF23AA3086E8140095C433 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7EBF437E306FE76F00D4DAA8 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7EC2E12B3082607B0035802B /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7EC6AC7830697C1200D1F15C /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ECDD7AD30769DBD005301B5 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ECE1D6D30828F36003ADB5E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED5A77E3082AA1C002851D5 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +299,31 @@
 			sourceTree = "<group>";
 		};
 		7EDAF67B30703672004AB2DC /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EE65B363077CB0C00640844 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EF43002307EBA75009833B1 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EF500773082AABE00B58DE5 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EF6546B3083BF5F00BC02A5 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EFFE17230827AB9004F56C7 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -342,32 +468,104 @@
 					ProjectRef = 7EDAF66E30703672004AB2DC /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 7EC6AC7830697C1200D1F15C /* Products */;
-					ProjectRef = 7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */;
-				},
-				{
 					ProductGroup = 7E76048030696F32001221FB /* Products */;
 					ProjectRef = 7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 7EBF437E306FE76F00D4DAA8 /* Products */;
-					ProjectRef = 7EBF4371306FE76F00D4DAA8 /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7EF43002307EBA75009833B1 /* Products */;
+					ProjectRef = 7EF42FF4307EBA75009833B1 /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
-					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E3BB6373082713800702C52 /* Products */;
+					ProjectRef = 7E3BB6283082713800702C52 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7E30AFF73068488600C38046 /* Products */;
 					ProjectRef = 7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7E0A229B30703CAF002FB2CF /* Products */;
+					ProjectRef = 7E0A228E30703CAF002FB2CF /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E9D008230852CF800E7255F /* Products */;
+					ProjectRef = 7E9D007330852CF800E7255F /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EC2E12B3082607B0035802B /* Products */;
+					ProjectRef = 7EC2E11D3082607B0035802B /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7ED5A77E3082AA1C002851D5 /* Products */;
+					ProjectRef = 7ED5A7703082AA1C002851D5 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E6CF4413065AE750067599E /* Products */;
+					ProjectRef = 7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E8BA3E63082AB6700A6B1F8 /* Products */;
+					ProjectRef = 7E8BA3D83082AB6700A6B1F8 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E68B9913082888600DE7491 /* Products */;
+					ProjectRef = 7E68B9823082888600DE7491 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EB7D647306701010043E42A /* Products */;
+					ProjectRef = 7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E4F59863069897E00DAA80D /* Products */;
+					ProjectRef = 7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7ED976C53066BEED001928A1 /* Products */;
+					ProjectRef = 7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7ECDD7AD30769DBD005301B5 /* Products */;
+					ProjectRef = 7ECDD79F30769DBD005301B5 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E50714B307040EC006837A7 /* Products */;
+					ProjectRef = 7E50713E307040EC006837A7 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7ECE1D6D30828F36003ADB5E /* Products */;
+					ProjectRef = 7ECE1D5E30828F36003ADB5E /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9BE66EB03052F069005C5C27 /* Products */;
+					ProjectRef = 9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EC6AC7830697C1200D1F15C /* Products */;
+					ProjectRef = 7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EBF437E306FE76F00D4DAA8 /* Products */;
+					ProjectRef = 7EBF4371306FE76F00D4DAA8 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E8E5A3B3082A80C008C9069 /* Products */;
+					ProjectRef = 7E8E5A2C3082A80C008C9069 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EBF23AA3086E8140095C433 /* Products */;
+					ProjectRef = 7EBF239B3086E8140095C433 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 9B142CC8305ED66E00151559 /* Products */;
+					ProjectRef = 9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 9B8CF44F3047116700BAA434 /* Products */;
 					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 7E0A229B30703CAF002FB2CF /* Products */;
-					ProjectRef = 7E0A228E30703CAF002FB2CF /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E3CA21F3082A3F40002B6A0 /* Products */;
+					ProjectRef = 7E3CA2103082A3F40002B6A0 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7EA148D2306C551100D0F08D /* Products */;
@@ -378,12 +576,20 @@
 					ProjectRef = 9B5D696D306166BF0076651E /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 7E6CF4413065AE750067599E /* Products */;
-					ProjectRef = 7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E72B5F530827438006FA4E2 /* Products */;
+					ProjectRef = 7E72B5E630827438006FA4E2 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7E1C2511306C47B30011426A /* Products */;
 					ProjectRef = 7E1C2510306C47B30011426A /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EF6546B3083BF5F00BC02A5 /* Products */;
+					ProjectRef = 7EF6545C3083BF5F00BC02A5 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EF500773082AABE00B58DE5 /* Products */;
+					ProjectRef = 7EF500693082AABE00B58DE5 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 9BAB777F305EDE7B00ED9EFB /* Products */;
@@ -402,28 +608,16 @@
 					ProjectRef = 7EAC8634306D4E9B00E0375A /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 7EB7D647306701010043E42A /* Products */;
-					ProjectRef = 7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7EE65B363077CB0C00640844 /* Products */;
+					ProjectRef = 7EE65B283077CB0C00640844 /* Here's Hingham!.xcodeproj */;
 				},
 				{
-					ProductGroup = 7E4F59863069897E00DAA80D /* Products */;
-					ProjectRef = 7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */;
-				},
-				{
-					ProductGroup = 7ED976C53066BEED001928A1 /* Products */;
-					ProjectRef = 7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */;
-				},
-				{
-					ProductGroup = 7E50714B307040EC006837A7 /* Products */;
-					ProjectRef = 7E50713E307040EC006837A7 /* Here's Hingham!.xcodeproj */;
+					ProductGroup = 7E0C0B3E30857CCD009AF630 /* Products */;
+					ProjectRef = 7E0C0B2F30857CCD009AF630 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7EBE48373071407500479E93 /* Products */;
 					ProjectRef = 7EBE482A3071407500479E93 /* Here's Hingham!.xcodeproj */;
-				},
-				{
-					ProductGroup = 9BE66EB03052F069005C5C27 /* Products */;
-					ProjectRef = 9BE66EAB3052F069005C5C27 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7E1C24E5306BF2A70011426A /* Products */;
@@ -436,6 +630,10 @@
 				{
 					ProductGroup = 9BC500163049E34300143B1A /* Products */;
 					ProjectRef = 9BC500113049E34300143B1A /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EFFE17230827AB9004F56C7 /* Products */;
+					ProjectRef = 7EFFE16330827AB9004F56C7 /* Here's Hingham!.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -621,7 +819,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 132;
+				CURRENT_PROJECT_VERSION = 135;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -633,6 +831,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
@@ -640,7 +839,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.60;
+				MARKETING_VERSION = 1.63;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -660,7 +859,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 132;
+				CURRENT_PROJECT_VERSION = 135;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -672,6 +871,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
@@ -679,7 +879,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.60;
+				MARKETING_VERSION = 1.63;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

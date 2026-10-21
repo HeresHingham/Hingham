@@ -57,12 +57,13 @@ struct PlaceAnnotationView: View {
     newIconSize = resizePercent != 0 ? zoomAdjustedIconSize * resizePercent : zoomAdjustedIconSize
     @AppStorage("ShowSpecials") var showSpecials: Bool = true
     
-    if newIconSize < 5.0 && newIconSize > 0.0 {
+    if newIconSize < 5.0 && newIconSize > 0.0 && placeFilter != .Park {
       newIconSize *= 2.5
     }
     
     if placeFilter == .Park {
-      newIconSize = max(placeName.hasSuffix("Path") || placeName.hasSuffix("Trail") ? 64 : 86, newIconSize)
+      newIconSize *= placeName.hasSuffix("Path") || placeName.hasSuffix("Trail") ? 10 : 12
+      newIconSize = min(125.0, newIconSize)
     }
     
     return ZStack {

@@ -23,14 +23,5 @@
 		<string>MKDirectionsModeFerry</string>
 		<string>MKDirectionsModePedestrian</string>
 	</array>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIColorName</key>
-		<string>Launch Background Color</string>
-		<key>UIImageName</key>
-		<string>Launch Screen</string>
-		<key>UILaunchScreen</key>
-		<dict/>
-	</dict>
 </dict>
 </plist>
