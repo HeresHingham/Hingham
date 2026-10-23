@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EC67FE3308AD2BA00D257E9 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 7EC67FE2308AD2BA00D257E9 /* AlertToast */; };
 		9B1E78762FA6917800F79DCD /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1E78752FA6917800F79DCD /* YouTubePlayerKit */; };
 		9B26F35D2E15BFAE00757947 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9B26F35C2E15BFAE00757947 /* FirebaseAuth */; };
 		9B26F35F2E15BFAE00757947 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B26F35E2E15BFAE00757947 /* FirebaseCore */; };
@@ -40,22 +41,27 @@
 		7E91ED31306C63E8006B4B82 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E9D007330852CF800E7255F /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EA148C5306C551100D0F08D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EA3EE90308A608500C366D3 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EAC8634306D4E9B00E0375A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EB7D643306701010043E42A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EBE482A3071407500479E93 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EBF239B3086E8140095C433 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EBF4371306FE76F00D4DAA8 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EC2E11D3082607B0035802B /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EC67FA8308AD18D00D257E9 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ECDD79F30769DBD005301B5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ECE1D5E30828F36003ADB5E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED5A7703082AA1C002851D5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7ED7A93D308AD15300A09780 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EDAF66E30703672004AB2DC /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EE65B283077CB0C00640844 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EF42FF4307EBA75009833B1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EF500693082AABE00B58DE5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EF6545C3083BF5F00BC02A5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EF95FF3308ACC0F0015E13E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7EF9607D308ACE8F0015E13E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7EFFE16330827AB9004F56C7 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B142CC3305ED66E00151559 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B63F2702DB6C365001E5857 /* MapKit.framework in Frameworks */,
+				7EC67FE3308AD2BA00D257E9 /* AlertToast in Frameworks */,
 				9BE265B92E26CBC000FE80DD /* Alamofire in Frameworks */,
 				9B1E78762FA6917800F79DCD /* YouTubePlayerKit in Frameworks */,
 				9B26F3612E15BFAE00757947 /* FirebaseFirestore in Frameworks */,
@@ -199,6 +206,11 @@
 				7EF6545C3083BF5F00BC02A5 /* Here's Hingham!.xcodeproj */,
 				7E9D007330852CF800E7255F /* Here's Hingham!.xcodeproj */,
 				7E0C0B2F30857CCD009AF630 /* Here's Hingham!.xcodeproj */,
+				7EBF239B3086E8140095C433 /* Here's Hingham!.xcodeproj */,
+				7EA3EE90308A608500C366D3 /* Here's Hingham!.xcodeproj */,
+				7EF95FF3308ACC0F0015E13E /* Here's Hingham!.xcodeproj */,
+				7EF9607D308ACE8F0015E13E /* Here's Hingham!.xcodeproj */,
+				7ED7A93D308AD15300A09780 /* Here's Hingham!.xcodeproj */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -243,6 +255,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7EA3EE9F308A608500C366D3 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7EAC8641306D4E9B00E0375A /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -273,6 +290,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7EC67FB6308AD18D00D257E9 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7EC6AC7830697C1200D1F15C /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -289,6 +311,11 @@
 			sourceTree = "<group>";
 		};
 		7ED5A77E3082AA1C002851D5 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED7A94B308AD15300A09780 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -319,6 +346,16 @@
 			sourceTree = "<group>";
 		};
 		7EF6546B3083BF5F00BC02A5 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EF96001308ACC0F0015E13E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EF9608B308ACE8F0015E13E /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -422,6 +459,7 @@
 				9B5A0F8C2E30098F005D8644 /* FirebaseCrashlytics */,
 				9B1E78752FA6917800F79DCD /* YouTubePlayerKit */,
 				9B7D5C602FAE46E300B86146 /* YouTubeiOSPlayerHelper */,
+				7EC67FE2308AD2BA00D257E9 /* AlertToast */,
 			);
 			productName = "Here's Hingham!";
 			productReference = 9B63F2382DB68BC0001E5857 /* Here's Hingham!.app */;
@@ -458,6 +496,7 @@
 				9BE265BC2E27089700FE80DD /* XCRemoteSwiftPackageReference "CDYelpFusionKit" */,
 				9B1E78742FA6917800F79DCD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 				9B7D5C5F2FAE46E300B86146 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				7EC67FE1308AD2BA00D257E9 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9B63F2392DB68BC0001E5857 /* Products */;
@@ -492,6 +531,10 @@
 					ProjectRef = 7E9D007330852CF800E7255F /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7ED7A94B308AD15300A09780 /* Products */;
+					ProjectRef = 7ED7A93D308AD15300A09780 /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EC2E12B3082607B0035802B /* Products */;
 					ProjectRef = 7EC2E11D3082607B0035802B /* Here's Hingham!.xcodeproj */;
 				},
@@ -510,6 +553,10 @@
 				{
 					ProductGroup = 7E68B9913082888600DE7491 /* Products */;
 					ProjectRef = 7E68B9823082888600DE7491 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EF96001308ACC0F0015E13E /* Products */;
+					ProjectRef = 7EF95FF3308ACC0F0015E13E /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7EB7D647306701010043E42A /* Products */;
@@ -550,6 +597,10 @@
 				{
 					ProductGroup = 7E8E5A3B3082A80C008C9069 /* Products */;
 					ProjectRef = 7E8E5A2C3082A80C008C9069 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EA3EE9F308A608500C366D3 /* Products */;
+					ProjectRef = 7EA3EE90308A608500C366D3 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7EBF23AA3086E8140095C433 /* Products */;
@@ -596,6 +647,10 @@
 					ProjectRef = 9BAB777A305EDE7B00ED9EFB /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7EC67FB6308AD18D00D257E9 /* Products */;
+					ProjectRef = 7EC67FA8308AD18D00D257E9 /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 9B2A8C523048FA1300B18355 /* Products */;
 					ProjectRef = 9B2A8C4E3048FA1300B18355 /* Here's Hingham!.xcodeproj */;
 				},
@@ -634,6 +689,10 @@
 				{
 					ProductGroup = 7EFFE17230827AB9004F56C7 /* Products */;
 					ProjectRef = 7EFFE16330827AB9004F56C7 /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7EF9608B308ACE8F0015E13E /* Products */;
+					ProjectRef = 7EF9607D308ACE8F0015E13E /* Here's Hingham!.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -819,7 +878,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 135;
+				CURRENT_PROJECT_VERSION = 136;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -839,7 +898,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.63;
+				MARKETING_VERSION = 1.64;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -859,7 +918,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 135;
+				CURRENT_PROJECT_VERSION = 136;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -879,7 +938,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.63;
+				MARKETING_VERSION = 1.64;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -916,6 +975,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7EC67FE1308AD2BA00D257E9 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
 		9B1E78742FA6917800F79DCD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
@@ -967,6 +1034,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7EC67FE2308AD2BA00D257E9 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EC67FE1308AD2BA00D257E9 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
 		9B1E78752FA6917800F79DCD /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B1E78742FA6917800F79DCD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;

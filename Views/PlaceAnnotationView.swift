@@ -22,6 +22,8 @@ struct PlaceAnnotationView: View {
   let placeFilter: PlaceFilter
   let imagery3DMode: Bool
   let showLabels: Bool
+  let zoomInUse: Double
+  let zoomClose: Double
   @Environment(\.colorScheme) var colorScheme
   @State private var isRotated = false
 
@@ -52,7 +54,7 @@ struct PlaceAnnotationView: View {
 
     let specialImageName = imageNameIfSpecialIsToday(special: specials, showSpecial: showSpecial)
     let resizePercent = iconResizePercent
-    let zoomAdjustedIconSize = iconSize * 2
+    let zoomAdjustedIconSize = iconSize * (zoomInUse == zoomClose ? 2 : 0.1)
     
     newIconSize = resizePercent != 0 ? zoomAdjustedIconSize * resizePercent : zoomAdjustedIconSize
     @AppStorage("ShowSpecials") var showSpecials: Bool = true

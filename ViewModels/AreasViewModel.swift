@@ -19,7 +19,9 @@ import YouTubeiOSPlayerHelper
 class AreasViewModel: ObservableObject {
   @EnvironmentObject private var placesViewModel: PlacesViewModel
   @Published var mapCameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
-  @Published var zoom: Double = 0.0025
+  @Published var zoom: Double = 0.05
+  @Published var zoomClose: Double = 0.0025
+  @Published var zoomInUse: Double = 0.0
   @Published var areas: [SchemaV1.Area] = []
   @Published var tours: [SchemaV1.Tour] = []
   @Published var videos: [SchemaV1.Video] = []
@@ -65,6 +67,9 @@ class AreasViewModel: ObservableObject {
   @Published var loadingTour = true
   @Published var imagery3DMode = false
   @Published var filterRegionSet = false
+  @Published var filterButtonHintMode = false
+  @Published var showEmptyBucketListToast = false
+  @Published var showTextPileExplanationToast = false
   
   @Published var placeFilter: PlaceFilter = .None {
     didSet {
@@ -95,8 +100,6 @@ class AreasViewModel: ObservableObject {
     }
   }
 
-  let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-  
   public func addArea(_ area: SchemaV1.Area) {
     areas.append(area)
   }
@@ -219,9 +222,5 @@ class AreasViewModel: ObservableObject {
       area.imageCount = imageCounter
     }
   }
-  
-  func zoomIn(_ zoom:Double) {
-    updateRegion(MapCameraPosition.region(MKCoordinateRegion(center: centerCoordinate, span: MKCoordinateSpan(latitudeDelta: zoom, longitudeDelta: zoom))))
-  }  
 }
 

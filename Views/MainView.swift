@@ -15,6 +15,7 @@ import FirebaseFirestore
 import AVKit
 import YouTubePlayerKit
 import YouTubeiOSPlayerHelper
+import AlertToast
 
 struct MainView: View {
   @EnvironmentObject private var areasViewModel: AreasViewModel
@@ -39,7 +40,6 @@ struct MainView: View {
   @State private var showLabels: Bool = true
   @State private var homeAreaId: Int = -1
   @State private var homeArea: SchemaV1.Area = SchemaV1.Area()
-  @State private var toasts: [Toast] = []
   @State private var mapStyle: MapStyle = MapStyle.standard(pointsOfInterest: .including([]))
   @State private var interactionModes: MapInteractionModes = [.all]
   @State private var imagery3DMode = false
@@ -240,37 +240,19 @@ struct MainView: View {
         Alert(title: Text("Look Around"), message: Text("Look around is not available in this area."), dismissButton: .default(Text("OK")))
       }
     }
-    .interactiveToast($toasts)
     .onAppear {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
     .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
       areasViewModel.cardHeightMultiple = UIDevice.current.userInterfaceIdiom == .pad ? UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown ? 0.6 : 1.0 : 0.75
     }
-  }
-  
-  func showToast(_ text: String, _ icon: String) {
-    withAnimation(.spring) {
-      let toast = Toast { id in self.ToastView(id, text, icon) }
-        toasts.append(toast)
+    .toast(isPresenting: $areasViewModel.showEmptyBucketListToast, duration: 10.0) {
+      AlertToast(displayMode: .banner(.slide), type: .regular, title: "Bucket List is Empty", subTitle: "You don't have any places in your Bucket List.\r\nTap \"+ Bucket List\" in place details to add that place.")
     }
-  }
-  
-  @ViewBuilder
-  func ToastView(_ id: String, _ text: String, _ icon: String) -> some View {
-      HStack {
-        Image(systemName: icon)
-        Text(text).font(.system(size: 13.0, weight: .regular, design: .default))
-        Spacer()
-      }
-      .padding()
-      .background(
-          RoundedRectangle(cornerRadius: 24)
-              .fill(.orange)
-              .shadow(color: .black.opacity(0.06), radius: 3, x: -1, y: -3)
-              .shadow(color: .black.opacity(0.06), radius: 2, x: 1, y: 3)
-      )
-      .padding(.horizontal)
+    .toast(isPresenting: $areasViewModel.showTextPileExplanationToast, duration: 10.0) {
+      AlertToast(displayMode: .banner(.slide), type: .regular, title: "Glitch?", subTitle: "The place names you see in a pile is by design.\r\nSlowly zoom in and the names will become legible.")
+
+    }
   }
 }
 
@@ -284,72 +266,87 @@ struct FilterButtonView: View {
   var onButtonTap: () -> Void
   
   var body: some View {
-    Button(action: {
-      withAnimation(.easeInOut) {        
-        areasViewModel.firstScreenVisible = false
-        areasViewModel.loadingTour = false
-        areasViewModel.selectedTour = SchemaV1.Tour()
-        areasViewModel.selectedArea = SchemaV1.Area()
-        areasViewModel.iconAltitudeMaximum = 50000
-        areasViewModel.placeFilter = type
-        areasViewModel.visible = false
-        areasViewModel.iconResizePercent = 0.0
-        areasViewModel.distance = 0.0
-        areasViewModel.selectedTour.tourId = -1
-        areasViewModel.filterRegionSet = false
-        let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
-        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
-        areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
-      }
-      
-//      } else if title == "Update Yelp" {
-//        let dataService = DataService()
-//        let places = placesViewModel.places.filter { $0.areaId == 5 }
-//        var counter = 0
-//        places.forEach { place in
-//          if place.yelpCategory == "" && counter < 11 {
-//            dataService.updateYelp(name: place.name)
-//            counter += 1
-//          }
-//        }
-//      } else if title == "Update Google" {
-//        let dataService = DataService()
-//        let places = placesViewModel.places.filter { $0.areaId == 5 }
-//        places.forEach { place in
-//          dataService.updateGoogle(name: place.name)
-//        }
-      
-      areasViewModel.updateRegion(areasViewModel.mapCameraPosition)
-
-      Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-        withAnimation(.easeInOut) {
-          areasViewModel.showCardView = false
-          areasViewModel.visible = false
-          areasViewModel.firstScreenVisible = false
-          onButtonTap()
-        }
-      }
-    }) {
-      HStack {
+    VStack {
+      Button(action: {
+        @AppStorage("FilterButtonHintMode") var hintMode: Bool = true
+        areasViewModel.filterButtonHintMode = hintMode
+        
         if type == .BucketList {
-          Image(imageName)
-        } else {
-          Image(systemName: imageName)
+          @AppStorage("BucketList") var bucketList: String = ""
+          let bucketListArray = bucketList.components(separatedBy: ",")
+          var places: [SchemaV1.Place] = placesViewModel.places
+          places = places.filter { bucketListArray.contains($0.documentID) }
+          areasViewModel.showEmptyBucketListToast = places.count == 0
+        } else if [.Dining, .Coffee, .Shopping].contains(type) && areasViewModel.filterButtonHintMode == true {
+          areasViewModel.showTextPileExplanationToast = true
+        }
+
+        withAnimation(.easeInOut) {
+          areasViewModel.firstScreenVisible = false
+          areasViewModel.loadingTour = false
+          areasViewModel.selectedTour = SchemaV1.Tour()
+          areasViewModel.selectedArea = SchemaV1.Area()
+          areasViewModel.iconAltitudeMaximum = 50000
+          areasViewModel.placeFilter = type
+          areasViewModel.visible = false
+          areasViewModel.iconResizePercent = 0.0
+          areasViewModel.distance = 0.0
+          areasViewModel.selectedTour.tourId = -1
+          areasViewModel.filterRegionSet = false
+          areasViewModel.zoomInUse = areasViewModel.zoom
+          let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
+          let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
+          // areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
         }
         
-        Text(title)
+        //      } else if title == "Update Yelp" {
+        //        let dataService = DataService()
+        //        let places = placesViewModel.places.filter { $0.areaId == 5 }
+        //        var counter = 0
+        //        places.forEach { place in
+        //          if place.yelpCategory == "" && counter < 11 {
+        //            dataService.updateYelp(name: place.name)
+        //            counter += 1
+        //          }
+        //        }
+        //      } else if title == "Update Google" {
+        //        let dataService = DataService()
+        //        let places = placesViewModel.places.filter { $0.areaId == 5 }
+        //        places.forEach { place in
+        //          dataService.updateGoogle(name: place.name)
+        //        }
+        
+//        areasViewModel.updateRegion(areasViewModel.mapCameraPosition)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+          withAnimation(.easeInOut) {
+            areasViewModel.showCardView = false
+            areasViewModel.visible = false
+            areasViewModel.firstScreenVisible = false
+          }
+        }
+      }) {
+        HStack {
+          if type == .BucketList {
+            Image(imageName)
+          } else {
+            Image(systemName: imageName)
+          }
+          
+          Text(title)
+        }
+        .padding(6)
       }
-      .padding(6)
+      .foregroundColor(colorScheme == .dark ? .white : .black)
+      .background(areasViewModel.placeFilter == type ? Color("AccentTabColor") : colorScheme == .dark ? .black : .white)
+      .font(.system(size: 10))
+      .fontWeight(.semibold)
+      .cornerRadius(10.0)
+      .shadow(color: .black.opacity(0.75), radius: 2, x: 1, y: 1)
     }
-    .foregroundColor(colorScheme == .dark ? .white : .black)
-    .background(areasViewModel.placeFilter == type ? Color("AccentTabColor") : colorScheme == .dark ? .black : .white)
-    .font(.system(size: 10))
-    .fontWeight(.semibold)
-    .cornerRadius(10.0)
-    .shadow(color: .black.opacity(0.75), radius: 2, x: 1, y: 1)
   }
 }
-  
+
 extension MainView {
   private var areaMapLayer: some View {
     Map(initialPosition: position) {
@@ -368,7 +365,7 @@ extension MainView {
                     areasViewModel.selectedArea = area
                   }
                   areasViewModel.distance = 0.0
-                  let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
+                  let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoomClose)
                   areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: area.centerCoordinates, span: span))
                   areasViewModel.visible = false
                 }
@@ -479,9 +476,13 @@ extension MainView {
             ForEach(places) { place in
               if showHouses == true || (showHouses == false && place.type != 6) {
                 Annotation("", coordinate: place.coordinates) {
-                  PlaceAnnotationView(areaName: place.areaName, placeName: place.name, shortName: place.shortName, specials: place.specials, type: place.type, iconSize: place.iconSize, selected: place.selected, opacity: annotationOpacity, iconResizePercent: areasViewModel.iconResizePercent, placeFilter: areasViewModel.placeFilter, imagery3DMode: imagery3DMode, showLabels: showLabels)
+                  PlaceAnnotationView(areaName: place.areaName, placeName: place.name, shortName: place.shortName, specials: place.specials, type: place.type, iconSize: place.iconSize, selected: place.selected, opacity: annotationOpacity, iconResizePercent: areasViewModel.iconResizePercent, placeFilter: areasViewModel.placeFilter, imagery3DMode: imagery3DMode, showLabels: showLabels, zoomInUse: areasViewModel.zoomInUse, zoomClose: areasViewModel.zoomClose)
                     .onTapGesture {
                       areasViewModel.loadingPlaces = false
+                      if [.Dining, .Coffee, .Shopping].contains(areasViewModel.placeFilter) {
+                        @AppStorage("FilterButtonHintMode") var hintMode: Bool = true
+                        hintMode = false
+                      }
                       if place.type < 20 {
                         areasViewModel.updateAddToBucketlist(place.documentID)
                         areasViewModel.areaImageUrl = ""
@@ -504,7 +505,7 @@ extension MainView {
             }
           }
                     
-          if areasViewModel.cameraDistance < 12000 && areasViewModel.cameraDistance > 0 {
+          if areasViewModel.cameraDistance < 12000 && areasViewModel.cameraDistance > 0 && areasViewModel.placeFilter == .Park {
             ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
                 MapPolyline(coordinates: SplineGenerator.generateSpline(from: areasViewModel.trailCoordinateArrays[index], segments: 30))
                   .stroke(areasViewModel.trailTypes[index] == "terrific" ? .red : colorScheme == .dark ? .white : .black, style: areasViewModel.trailLineTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailLineTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleRegular)
@@ -519,6 +520,7 @@ extension MainView {
               }
             }
           }
+          
           UserAnnotation()
         }
         .ignoresSafeArea()
@@ -563,8 +565,8 @@ extension MainView {
             let span = MKCoordinateSpan(latitudeDelta: UIDevice.current.userInterfaceIdiom == .pad ? 0.145 : 0.05, longitudeDelta: UIDevice.current.userInterfaceIdiom == .pad ? 0.145 : 0.05)
             areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.22527,longitude: -70.88028), span: span))
             areasViewModel.loadingTour = false
-            print("")
-            areasViewModel.selectedArea.areaId = -2
+            // print("")
+            // areasViewModel.selectedArea.areaId = -2
           }
         }
         .background(.white)
@@ -929,48 +931,45 @@ extension CLLocationCoordinate2D {
 }
 
 struct SplineGenerator {
-    /// Takes an array of coordinates and generates a smooth, curved path.
-    /// - Parameter segments: The number of intermediate points to generate between each original pair.
-    static func generateSpline(from coordinates: [CLLocationCoordinate2D], segments: Int = 20) -> [CLLocationCoordinate2D] {
-        guard coordinates.count >= 2 else { return coordinates }
-        
-        var smoothCoordinates: [CLLocationCoordinate2D] = []
-        let count = coordinates.count
-        
-        // Loop through all points to interpolate between index i and i+1
-        for i in 0..<count - 1 {
-            // Extrapolate virtual endpoints for the start and end of the line
-            let p0 = i == 0 ? extrapolate(from: coordinates[1], to: coordinates[0]) : coordinates[i - 1]
-            let p1 = coordinates[i]
-            let p2 = coordinates[i + 1]
-            let p3 = i == count - 2 ? extrapolate(from: coordinates[count - 2], to: coordinates[count - 1]) : coordinates[i + 2]
-            
-            // Add the original point
-            smoothCoordinates.append(p1)
-            
-            // Generate intermediate points
-            for step in 1..<segments {
-                let t = Double(step) / Double(segments)
-                let intermediatePoint = CLLocationCoordinate2D.catmullRom(p0: p0, p1: p1, p2: p2, p3: p3, t: t)
-                smoothCoordinates.append(intermediatePoint)
-            }
-        }
-        
-        // Add the absolute final point
-        if let last = coordinates.last {
-            smoothCoordinates.append(last)
-        }
-        
-        return smoothCoordinates
+  /// Takes an array of coordinates and generates a smooth, curved path.
+  /// - Parameter segments: The number of intermediate points to generate between each original pair.
+  static func generateSpline(from coordinates: [CLLocationCoordinate2D], segments: Int = 20) -> [CLLocationCoordinate2D] {
+    guard coordinates.count >= 2 else { return coordinates }
+    var smoothCoordinates: [CLLocationCoordinate2D] = []
+    let count = coordinates.count
+    
+    // Loop through all points to interpolate between index i and i+1
+    for i in 0..<count - 1 {
+      // Extrapolate virtual endpoints for the start and end of the line
+      let p0 = i == 0 ? extrapolate(from: coordinates[1], to: coordinates[0]) : coordinates[i - 1]
+      let p1 = coordinates[i]
+      let p2 = coordinates[i + 1]
+      let p3 = i == count - 2 ? extrapolate(from: coordinates[count - 2], to: coordinates[count - 1]) : coordinates[i + 2]
+      
+      // Add the original point
+      smoothCoordinates.append(p1)
+      
+      // Generate intermediate points
+      for step in 1..<segments {
+          let t = Double(step) / Double(segments)
+          let intermediatePoint = CLLocationCoordinate2D.catmullRom(p0: p0, p1: p1, p2: p2, p3: p3, t: t)
+          smoothCoordinates.append(intermediatePoint)
+      }
     }
     
-    // Helper to calculate dummy boundary control points for the outer edges of the line
-    private static func extrapolate(from pA: CLLocationCoordinate2D, to pB: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(
-            latitude: pB.latitude + (pB.latitude - pA.latitude),
-            longitude: pB.longitude + (pB.longitude - pA.longitude)
-        )
+    // Add the absolute final point
+    if let last = coordinates.last {
+      smoothCoordinates.append(last)
     }
+    
+    return smoothCoordinates
+  }
+  
+  // Helper to calculate dummy boundary control points for the outer edges of the line
+  private static func extrapolate(from pA: CLLocationCoordinate2D, to pB: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+      return CLLocationCoordinate2D(
+          latitude: pB.latitude + (pB.latitude - pA.latitude),
+          longitude: pB.longitude + (pB.longitude - pA.longitude)
+      )
+  }
 }
-
-

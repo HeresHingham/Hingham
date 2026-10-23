@@ -220,7 +220,8 @@ extension CardView {
         }
         if (area.areaId == areasViewModel.selectedArea.areaId) {
           areasViewModel.distance = 0.0
-          let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
+          areasViewModel.zoomInUse = areasViewModel.zoomClose
+          let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoomClose, longitudeDelta: areasViewModel.zoomClose)
           areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: area.centerCoordinates, span: span))
         } else {
           areasViewModel.selectedArea = area
