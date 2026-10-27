@@ -62,7 +62,7 @@ class AreasViewModel: ObservableObject {
   @Published var ytPlayerView = YTPlayerView()
   @Published var statusObserver: NSKeyValueObservation?
   @Published var scrollItemId = 0
-  @Published var iconAltitudeMaximum: Int = 6000
+  @Published var iconAltitudeMaximum: Int = UIDevice.current.userInterfaceIdiom == .pad ? 20000 : 6000
   @Published var loadingPlaces = false
   @Published var loadingTour = true
   @Published var imagery3DMode = false
@@ -70,6 +70,7 @@ class AreasViewModel: ObservableObject {
   @Published var filterButtonHintMode = false
   @Published var showEmptyBucketListToast = false
   @Published var showTextPileExplanationToast = false
+  @Published var firstParkShowing = true
   
   @Published var placeFilter: PlaceFilter = .None {
     didSet {

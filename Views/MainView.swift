@@ -18,6 +18,7 @@ import YouTubeiOSPlayerHelper
 import AlertToast
 
 struct MainView: View {
+  @Namespace private var mapScope
   @EnvironmentObject private var areasViewModel: AreasViewModel
   @EnvironmentObject private var placesViewModel: PlacesViewModel
   @Environment(\.colorScheme) var colorScheme
@@ -250,7 +251,7 @@ struct MainView: View {
       AlertToast(displayMode: .banner(.slide), type: .regular, title: "Bucket List is Empty", subTitle: "You don't have any places in your Bucket List.\r\nTap \"+ Bucket List\" in place details to add that place.")
     }
     .toast(isPresenting: $areasViewModel.showTextPileExplanationToast, duration: 10.0) {
-      AlertToast(displayMode: .banner(.slide), type: .regular, title: "Glitch?", subTitle: "The place names you see in a pile is by design.\r\nSlowly zoom in and the names will become legible.")
+      AlertToast(displayMode: .banner(.slide), type: .regular, title: "Black Clusters are not Glitches!", subTitle: "Zoom in on the cluster to reveal places within.")
 
     }
   }
@@ -279,6 +280,8 @@ struct FilterButtonView: View {
           areasViewModel.showEmptyBucketListToast = places.count == 0
         } else if [.Dining, .Coffee, .Shopping].contains(type) && areasViewModel.filterButtonHintMode == true {
           areasViewModel.showTextPileExplanationToast = true
+        } else if type == .Park {
+          areasViewModel.firstParkShowing = true
         }
 
         withAnimation(.easeInOut) {
@@ -294,9 +297,9 @@ struct FilterButtonView: View {
           areasViewModel.selectedTour.tourId = -1
           areasViewModel.filterRegionSet = false
           areasViewModel.zoomInUse = areasViewModel.zoom
-          let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
-          let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
-          // areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
+//          let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
+//          let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.24059, longitude: -70.90502), span: span)
+//          areasViewModel.mapCameraPosition = MapCameraPosition.region(region)
         }
         
         //      } else if title == "Update Yelp" {
@@ -469,9 +472,9 @@ extension MainView {
       }
     }
     
-    return ZStack {
+    return ZStack(alignment: .bottomTrailing) {
       MapReader { proxy in
-        Map(position: $areasViewModel.mapCameraPosition, bounds: MapCameraBounds(minimumDistance: 0), interactionModes: interactionModes, scope: nil) {
+        Map(position: $areasViewModel.mapCameraPosition, bounds: MapCameraBounds(minimumDistance: 0), interactionModes: interactionModes, scope: mapScope) {
           if currentAltitudeFeet < maximumAltitudeFeet || (areasViewModel.placeFilter != .None && currentDistanceDelta < 8000) {
             ForEach(places) { place in
               if showHouses == true || (showHouses == false && place.type != 6) {
@@ -530,29 +533,30 @@ extension MainView {
             }
         }
         .onChange(of: imagery3DMode) { oldValue, newValue in
-          
           mapStyle = newValue == true ? areasViewModel.satelliteMapStyle : areasViewModel.standardMapStyle
         }
         .onMapCameraChange(frequency: .continuous) { context in
           @AppStorage("IconAltitudeMaximum") var iconAltitude = 18600
           areasViewModel.iconAltitudeMaximum = areasViewModel.iconAltitudeMaximum != 50000 ? iconAltitude : areasViewModel.iconAltitudeMaximum
           let distanceDelta = areasViewModel.distance - context.camera.distance
-          currentDistanceDelta = abs(distanceDelta)
+          currentDistanceDelta = UIDevice.current.userInterfaceIdiom == .phone ? abs(distanceDelta) : 1000
           areasViewModel.cameraDistance = context.camera.distance
           
           if areasViewModel.distance == 0.0 {
             areasViewModel.distance = context.camera.distance
-          } else if areasViewModel.distance != context.camera.distance && abs(distanceDelta) > 20 {
-            let saveAreaId:Int = areasViewModel.selectedArea.areaId
-            areasViewModel.selectedArea.areaId = -1
-            
-            if (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) && UIDevice.current.userInterfaceIdiom == .phone {
-              areasViewModel.iconResizePercent = areasViewModel.distance / (context.camera.distance * 2.43)
-            } else {
-              areasViewModel.iconResizePercent = areasViewModel.distance / context.camera.distance
+          } else if areasViewModel.distance != context.camera.distance {
+            if currentDistanceDelta > 20 {
+              let saveAreaId:Int = areasViewModel.selectedArea.areaId
+              areasViewModel.selectedArea.areaId = -1
+              
+              if (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) && UIDevice.current.userInterfaceIdiom == .phone {
+                areasViewModel.iconResizePercent = areasViewModel.distance / (context.camera.distance * 2.43)
+              } else {
+                areasViewModel.iconResizePercent = areasViewModel.distance / context.camera.distance
+              }
+              
+              areasViewModel.selectedArea.areaId = saveAreaId
             }
-            
-            areasViewModel.selectedArea.areaId = saveAreaId
           }
           
           areasViewModel.centerCoordinate = context.region.center
@@ -561,24 +565,17 @@ extension MainView {
             areasViewModel.mapCameraPosition = MapCameraPosition.region(context.region)
           }
           
-          if areasViewModel.selectedArea.areaId == -1 {
+          if areasViewModel.selectedArea.areaId == -1 && areasViewModel.firstParkShowing == true {
             let span = MKCoordinateSpan(latitudeDelta: UIDevice.current.userInterfaceIdiom == .pad ? 0.145 : 0.05, longitudeDelta: UIDevice.current.userInterfaceIdiom == .pad ? 0.145 : 0.05)
             areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.22527,longitude: -70.88028), span: span))
             areasViewModel.loadingTour = false
+            areasViewModel.firstParkShowing = false
             // print("")
             // areasViewModel.selectedArea.areaId = -2
           }
         }
         .background(.white)
         .mapStyle(mapStyle)
-        .mapControls {
-          Button {
-            let span = MKCoordinateSpan(latitudeDelta: areasViewModel.zoom, longitudeDelta: areasViewModel.zoom)
-            areasViewModel.mapCameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.userLocation?.coordinate.latitude ?? 0.0, longitude: location.userLocation?.coordinate.longitude ?? 0.0), span: span))
-          } label: {
-            Image(systemName: "location.fill")
-          }
-        }
         .simultaneousGesture (
           DragGesture(minimumDistance: 0.0)
             .onChanged { value in
@@ -606,7 +603,12 @@ extension MainView {
             )
           )
         }
+        MapUserLocationButton(scope: mapScope)
+          .buttonBorderShape(.circle)
+          .background(.ultraThinMaterial, in: Circle())
+          .padding()
       }
+      .mapScope(mapScope)
   }
   
   private var ellipsisMenu: some View {
@@ -808,6 +810,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
   
   func stopUpdating() {
     manager.stopUpdatingLocation()
+  }
+  
+  func requestLocationPermission() {
+      manager.requestWhenInUseAuthorization()
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

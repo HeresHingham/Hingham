@@ -1,5 +1,5 @@
 //
-//  AreaPreviewView.swift
+//  CardView.swift
 //  Here's Hingham!
 //
 //  Created by Cameron Conway on 4/30/25.

@@ -64,7 +64,8 @@ struct PlaceAnnotationView: View {
     }
     
     if placeFilter == .Park {
-      newIconSize *= placeName.hasSuffix("Path") || placeName.hasSuffix("Trail") ? 10 : 12
+      newIconSize *= placeName.hasSuffix("Path") || placeName.hasSuffix("Trail") || placeName.hasSuffix("83") ? 10 : 12
+      newIconSize *= UIDevice.current.userInterfaceIdiom == .pad ? 2 : 1
       newIconSize = min(125.0, newIconSize)
     }
     
