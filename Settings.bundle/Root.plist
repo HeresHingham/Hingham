@@ -27,6 +27,26 @@
 			<true/>
 		</dict>
 		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show Labels</string>
+			<key>Key</key>
+			<string>ShowLabels</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show Specials</string>
+			<key>Key</key>
+			<string>ShowSpecials</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
 			<key>Values</key>
 			<array>
 				<integer>-1</integer>
@@ -44,6 +64,7 @@
 				<integer>11</integer>
 				<integer>12</integer>
 				<integer>13</integer>
+				<integer>14</integer>
 			</array>
 			<key>Titles</key>
 			<array>
@@ -56,6 +77,7 @@
 				<string>Hingham Harbor</string>
 				<string>Hingham Center</string>
 				<string>West Hingham</string>
+				<string>Kickapoo</string>
 				<string>Liberty Plain</string>
 				<string>Glad Tidings Plain</string>
 				<string>World&apos;s End</string>

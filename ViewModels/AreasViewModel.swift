@@ -19,6 +19,8 @@ import YouTubeiOSPlayerHelper
 class AreasViewModel: ObservableObject {
   @EnvironmentObject private var placesViewModel: PlacesViewModel
   @Published var mapCameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+  @Published var mapCameraCenter: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+  @Published var mapCameraSpan: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.0, longitudeDelta: 0.0)
   @Published var zoom: Double = 0.05
   @Published var zoomClose: Double = 0.0025
   @Published var zoomInUse: Double = 0.0
@@ -30,6 +32,7 @@ class AreasViewModel: ObservableObject {
   @Published var trailCoordinateArrays: [[CLLocationCoordinate2D]] = []
   @Published var trailLineTypes: [String] = []
   @Published var trailTypes: [String] = []
+  @Published var trailCenter: [CLLocationCoordinate2D] = []
   @Published var previewArea = SchemaV1.Area()
   @Published var selectedArea: SchemaV1.Area = SchemaV1.Area() {
     didSet {
@@ -119,6 +122,10 @@ class AreasViewModel: ObservableObject {
   
   public func addTrailPoint(_ trailPoint: SchemaV1.TrailPoint) {
     trailPoints.append(trailPoint)
+  }
+  
+  public func addTrailCenter(_ centerLat: Double, _ centerLng: Double) {
+    trailCenter.append(CLLocationCoordinate2D(latitude: centerLat, longitude: centerLng))
   }
   
   public func updateRegion(_ mapCameraPosition: MapCameraPosition) {

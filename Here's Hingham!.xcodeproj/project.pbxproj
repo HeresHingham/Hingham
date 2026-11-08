@@ -28,6 +28,7 @@
 		7E1C2510306C47B30011426A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		7E271662306977B8005AD373 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E30AFEA3068488600C38046 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E33980E30926DC300BB6CCB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E3BB6283082713800702C52 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E3CA2103082A3F40002B6A0 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E4F59793069897E00DAA80D /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -35,9 +36,11 @@
 		7E68B9823082888600DE7491 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E6CF43E3065AE750067599E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E72B5E630827438006FA4E2 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E75A7FA30A13086000472C7 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E88A589309113E8005F2CED /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E88A63F309135DB005F2CED /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7E89672C30938CFF00E6263A /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E8BA3D83082AB6700A6B1F8 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E8E5A2C3082A80C008C9069 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7E91ED31306C63E8006B4B82 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		7EC6AC6B30697C1200D1F15C /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ECDD79F30769DBD005301B5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ECE1D5E30828F36003ADB5E /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
+		7ED5A44130923C1C00C27FFB /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED5A7703082AA1C002851D5 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED7A93D308AD15300A09780 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
 		7ED976C23066BEED001928A1 /* Here's Hingham!.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Here's Hingham!.xcodeproj"; sourceTree = "<group>"; };
@@ -140,6 +144,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E33981C30926DC300BB6CCB /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7E3BB6373082713800702C52 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -217,6 +226,10 @@
 				7EC67FA8308AD18D00D257E9 /* Here's Hingham!.xcodeproj */,
 				7EF2F4D3308E58C3000D0D7E /* Here's Hingham!.xcodeproj */,
 				7E88A589309113E8005F2CED /* Here's Hingham!.xcodeproj */,
+				7E88A63F309135DB005F2CED /* Here's Hingham!.xcodeproj */,
+				7ED5A44130923C1C00C27FFB /* Here's Hingham!.xcodeproj */,
+				7E33980E30926DC300BB6CCB /* Here's Hingham!.xcodeproj */,
+				7E89672C30938CFF00E6263A /* Here's Hingham!.xcodeproj */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -227,6 +240,11 @@
 			sourceTree = "<group>";
 		};
 		7E72B5F530827438006FA4E2 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E75A80830A13086000472C7 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +260,11 @@
 			sourceTree = "<group>";
 		};
 		7E88A64D309135DB005F2CED /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E89673A30938CFF00E6263A /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -322,6 +345,11 @@
 			sourceTree = "<group>";
 		};
 		7ECE1D6D30828F36003ADB5E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ED5A44F30923C1C00C27FFB /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -532,6 +560,10 @@
 					ProjectRef = 7E76047330696F32001221FB /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7E89673A30938CFF00E6263A /* Products */;
+					ProjectRef = 7E89672C30938CFF00E6263A /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EF43002307EBA75009833B1 /* Products */;
 					ProjectRef = 7EF42FF4307EBA75009833B1 /* Here's Hingham!.xcodeproj */;
 				},
@@ -604,6 +636,10 @@
 					ProjectRef = 7E50713E307040EC006837A7 /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7E33981C30926DC300BB6CCB /* Products */;
+					ProjectRef = 7E33980E30926DC300BB6CCB /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 7ECE1D6D30828F36003ADB5E /* Products */;
 					ProjectRef = 7ECE1D5E30828F36003ADB5E /* Here's Hingham!.xcodeproj */;
 				},
@@ -640,12 +676,20 @@
 					ProjectRef = 9B8CF44B3047116700BAA434 /* Here's Hingham!.xcodeproj */;
 				},
 				{
+					ProductGroup = 7ED5A44F30923C1C00C27FFB /* Products */;
+					ProjectRef = 7ED5A44130923C1C00C27FFB /* Here's Hingham!.xcodeproj */;
+				},
+				{
 					ProductGroup = 7E3CA21F3082A3F40002B6A0 /* Products */;
 					ProjectRef = 7E3CA2103082A3F40002B6A0 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 7EA148D2306C551100D0F08D /* Products */;
 					ProjectRef = 7EA148C5306C551100D0F08D /* Here's Hingham!.xcodeproj */;
+				},
+				{
+					ProductGroup = 7E75A80830A13086000472C7 /* Products */;
+					ProjectRef = 7E75A7FA30A13086000472C7 /* Here's Hingham!.xcodeproj */;
 				},
 				{
 					ProductGroup = 9B5D6970306166BF0076651E /* Products */;
@@ -911,7 +955,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 140;
+				CURRENT_PROJECT_VERSION = 144;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -919,7 +963,7 @@
 				INFOPLIST_FILE = "Here-s-Hingham--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Hingham!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
-				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -932,7 +976,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.66;
+				MARKETING_VERSION = 1.68;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -952,7 +996,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 140;
+				CURRENT_PROJECT_VERSION = 144;
 				DEVELOPMENT_TEAM = 6Y57QV4NW5;
 				DISPLAY_P3_COLOR_SPACE_MAPPING = No;
 				ENABLE_PREVIEWS = YES;
@@ -960,7 +1004,7 @@
 				INFOPLIST_FILE = "Here-s-Hingham--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Hingham!";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
-				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app will get directions from your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -973,7 +1017,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.66;
+				MARKETING_VERSION = 1.68;
 				PRODUCT_BUNDLE_IDENTIFIER = "cambuilt.Here-s-Hingham-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

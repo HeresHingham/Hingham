@@ -201,6 +201,7 @@ struct Here_s_Hingham_App: App {
                   areasViewModel.trailCoordinateArrays.append(trailCoordinateArray)
                   areasViewModel.trailLineTypes.append(trailCoordinateType)
                   areasViewModel.trailTypes.append(trail.trailType)
+                  areasViewModel.addTrailCenter(place.locationLat, place.locationLng)
                 } catch {
                   print("Error decoding JSON: \(error), documentID \(trail.documentID)")
                 }

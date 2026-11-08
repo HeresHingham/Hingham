@@ -102,6 +102,7 @@ struct CardView: View {
   }
 }
 
+
 extension CardView {
   private var imageSection: some View {
     ZStack {
@@ -665,7 +666,7 @@ extension CardView {
             }
           }
           
-          if yReviews > 0 {
+          if placesViewModel.selectedPlace.yelpUrl != "" {
             if let url = URL(string: placesViewModel.selectedPlace.yelpUrl) {
               Link(destination: url) {
                 Image("Reviews/Yelp")

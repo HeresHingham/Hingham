@@ -21,7 +21,6 @@
 		<string>MKDirectionsModeBus</string>
 		<string>MKDirectionsModeCar</string>
 		<string>MKDirectionsModeFerry</string>
-		<string>MKDirectionsModePedestrian</string>
 	</array>
 </dict>
 </plist>

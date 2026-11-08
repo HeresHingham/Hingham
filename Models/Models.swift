@@ -478,7 +478,7 @@ enum SchemaV1: VersionedSchema {
     
     var lat = 0.0
     var lng = 0.0
-    var type = ""
+    var type:String = ""
     var timestamp: Date
     
     required init(from decoder: Decoder) throws {

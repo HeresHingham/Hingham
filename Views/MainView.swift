@@ -3,7 +3,7 @@
 //  MainView.swift
 //  Here's Hingham!
 //
-//  Created by Cameron Conway on 8/21/25.•
+//  Created by Cameron Conway on 8/21/25.
 //
 import Foundation
 import SwiftUI
@@ -48,7 +48,7 @@ struct MainView: View {
   @State private var currentDistanceDelta: Double = 100.0
 
   @State private var trailStrokeStyleWide = StrokeStyle(
-    lineWidth: 2.0,
+    lineWidth: 2.5,
     lineCap: .butt,
     lineJoin: .round
   )
@@ -507,10 +507,10 @@ extension MainView {
               }
             }
           }
-                    
+                    // SplineGenerator.generateSpline(from: areasViewModel.trailCoordinateArrays[index], segments: 30)
           if areasViewModel.cameraDistance < 12000 && areasViewModel.cameraDistance > 0 && areasViewModel.placeFilter == .Park {
             ForEach(0..<areasViewModel.trailCoordinateArrays.count, id: \.self) { index in
-                MapPolyline(coordinates: SplineGenerator.generateSpline(from: areasViewModel.trailCoordinateArrays[index], segments: 30))
+              MapPolyline(coordinates: areasViewModel.trailCoordinateArrays[index])
                   .stroke(areasViewModel.trailTypes[index] == "terrific" ? .red : colorScheme == .dark ? .white : .black, style: areasViewModel.trailLineTypes[index] == "wide" ? trailStrokeStyleWide : areasViewModel.trailLineTypes[index] == "untended" ? trailStrokeStyleUntended : trailStrokeStyleRegular)
                   .mapOverlayLevel(level: .aboveLabels)
             }
@@ -537,6 +537,8 @@ extension MainView {
         }
         .onMapCameraChange(frequency: .continuous) { context in
           @AppStorage("IconAltitudeMaximum") var iconAltitude = 18600
+          areasViewModel.mapCameraCenter = context.camera.centerCoordinate
+          areasViewModel.mapCameraSpan = context.region.span
           areasViewModel.iconAltitudeMaximum = areasViewModel.iconAltitudeMaximum != 50000 ? iconAltitude : areasViewModel.iconAltitudeMaximum
           let distanceDelta = areasViewModel.distance - context.camera.distance
           currentDistanceDelta = UIDevice.current.userInterfaceIdiom == .phone ? abs(distanceDelta) : 1000
@@ -574,7 +576,6 @@ extension MainView {
             // areasViewModel.selectedArea.areaId = -2
           }
         }
-        .background(.white)
         .mapStyle(mapStyle)
         .simultaneousGesture (
           DragGesture(minimumDistance: 0.0)
@@ -604,9 +605,9 @@ extension MainView {
           )
         }
         MapUserLocationButton(scope: mapScope)
-          .buttonBorderShape(.circle)
-          .background(.ultraThinMaterial, in: Circle())
-          .padding()
+        .buttonBorderShape(.circle)
+        .background(.ultraThinMaterial, in: Circle())
+        .padding()
       }
       .mapScope(mapScope)
   }
@@ -658,28 +659,57 @@ extension MainView {
         Label("Videos", systemImage: "video")
       }
       
+      Menu {
+        Button {
+          guard let url:URL = URL(string: "https://www.mbta.com/schedules/Boat-F2H/timetable") else { return }
+          openUrl(url) { accepted in
+              if !accepted {
+                _ = Alert(title: Text("Ferry"), message: Text("Ferry website could not be opened."), dismissButton: .default(Text("OK")))
+              }
+          }
+        }
+        label: {
+          Text("Ferry")
+        }
+        Button {
+          guard let url:URL = URL(string: "https://www.mbta.com/schedules/CR-Greenbush/timetable") else { return }
+          openUrl(url) { accepted in
+              if !accepted {
+                _ = Alert(title: Text("Train"), message: Text("Train website could not be opened."), dismissButton: .default(Text("OK")))
+              }
+          }
+        }
+        label: {
+          Text("Train")
+        }
+        Button {
+          guard let url:URL = URL(string: "https://www.mbta.com/schedules/220/line") else { return }
+          openUrl(url) { accepted in
+              if !accepted {
+                _ = Alert(title: Text("Bus"), message: Text("Bus website could not be opened."), dismissButton: .default(Text("OK")))
+              }
+          }
+        }
+        label: {
+          Text("Bus")
+        }
+        Button {
+          guard let url:URL = URL(string: "https://www.loopshuttle.com") else { return }
+          openUrl(url) { accepted in
+              if !accepted {
+                _ = Alert(title: Text("The Loop"), message: Text("The Loop website could not be opened."), dismissButton: .default(Text("OK")))
+              }
+          }
+        }
+        label: {
+          Text("The Loop")
+        }
+      } label: {
+        Label("Transportation", systemImage: "ferry")
+      }
+      
       Toggle(isOn: $imagery3DMode) {
         Label("Satellite", systemImage: "eraser.slash")
-      }
-      .disabled(areasViewModel.visible == true)
-      
-      Toggle(isOn: $showHouses) {
-        Label("Show Houses", systemImage: "house")
-      }
-      .disabled(areasViewModel.visible == true)
-      
-      Toggle(isOn: $showSpecials) {
-        Label("Show Specials", systemImage: "tag")
-      }
-      .disabled(areasViewModel.visible == true)
-      .onChange(of: showSpecials) { oldValue, newValue in
-        @AppStorage("ShowSpecials") var showSpecial: Bool = true
-        showSpecial = newValue
-        areasViewModel.selectedArea = areasViewModel.selectedArea
-      }
-      
-      Toggle(isOn: $showLabels) {
-        Label("Show Labels", systemImage: "textformat.characters")
       }
       .disabled(areasViewModel.visible == true)
       
@@ -885,8 +915,6 @@ struct YouTubeView: UIViewRepresentable {
     // Update the player if the video ID changes
   }
 }
-
-
 
 enum PlaceFilter: Int {
   case None = 0
